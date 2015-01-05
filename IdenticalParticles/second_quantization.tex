@@ -1,0 +1,449 @@
+\section{二次量子化}
+
+\begin{quotation}
+“类比说的不是相似，而是关系。”\qquad 麦克斯韦
+\end{quotation}
+
+对全同多粒子系统而言，我们可以使用直接乘积表象，但这样得到的波函数是很啰唆的，而且必须额外保证这样得到的波函数是对称化（玻色子）或反对称化（费米子）形式的。由于我们无法说出哪一个宗量$q_i$对应的量子态是哪一个$n$，所以我们只需说多粒子系统中有几个粒子处在$m$态，有几个粒子处在$n$态即可，这就是所谓占有数表象。
+
+\subsection{产生、湮灭算符}
+
+\subsubsection{费米系统}
+
+对多费米子系而言，假设最简单的情况两个费米子\index{Fermion: 费米子}，一个费米子处在$m$态，另一个费米子处在$n$态。由于费米子满足泡利不相容原理，所以$
+m \ne n$。
+
+\begin{equation}\label{two fermions wave function}
+\begin{gathered}
+\psi _{m,n}^F (q_1 ,q_2 ) = \frac{1} {{\sqrt 2 }}\left|
+{\begin{array}{*{20}c}
+   {\psi _m (q_1 )} & {\psi _m (q_2 )}  \\
+   {\psi _n (q_1 )} & {\psi _n (q_2 )}  \\
+\end{array} } \right| \hfill \\
+= \frac{1}{{\sqrt 2 }}\left( {\psi _m (q_1
+)\psi _n (q_2 ) - \psi _m (q_2 )\psi _n (q_1 )} \right) \hfill \\
+\end{gathered}
+\end{equation}
+
+
+现在我们湮灭一个粒子，这里就有两种选择了，假设我们湮灭一个$m$态的粒子，这样的一种操作用湮灭算符$a_m$表示，它的后果是只剩下一个粒子处在$n$态（相当于在行列式中拿掉一行）。记作：
+
+\begin{equation}\label{ferminon anni}
+a_m \left| {m,n} \right\rangle  \doteq \left| n \right\rangle
+\end{equation}
+
+
+我们还可定义产生算符，$a_m^{\dagger}$表示产生一个$m$态的粒子，对费米子系而言，有：
+
+
+\begin{equation*}
+a_m^\dag  \left| {m,n} \right\rangle  \doteq 0, a_m^\dag  \left| n
+\right\rangle \doteq \left| {m,n} \right\rangle .
+\end{equation*}
+
+
+现在对只有一个$n$粒子的态，继续湮灭一个$m$粒子，由于系统中已经没有$m$粒子了，这样的过程是不存在的，记作：
+
+\begin{equation*}
+a_m \left| n \right\rangle \doteq 0 .
+\end{equation*}
+
+
+假设系统中有一个$m$粒子，则湮灭算符\index{Annihilation operator: 湮灭算符}$a_m$可以对这个量子态进行运算，计算结果是没有一个粒子，即所谓真空态($\left|
+0 \right\rangle$)，记作：
+
+\begin{equation}\label{eq 3}
+a_m \left| m \right\rangle \doteq \left| 0 \right\rangle
+\end{equation}
+
+
+按照这种约定，我们可以证明如下对易关系：
+
+\begin{eqnarray}
+% \nonumber to remove numbering (before each equation)
+  \left\{ {a_m ,a_n^\dag  } \right\} &=& \delta _{m,n} \\
+  \left\{
+{a_m,a_n } \right\} &=& 0
+\end{eqnarray}
+
+
+
+对第一个对易式，对$m \ne n$我们可分别证明对量子态：$\left| {m,n}
+\right\rangle$, $\left| m \right\rangle$, $\left| n \right\rangle$
+和 $\left| 0 \right\rangle$都成立。比如对$\left| m
+\right\rangle$证明：
+
+
+\begin{center}
+\begin{tabular}{|l|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  $a_m a_n^\dag  \left| m \right\rangle  = a_m \left| {n,m}
+\right\rangle  =  - a_m \left| {m,n} \right\rangle  =  - \left| n
+\right\rangle $，\\
+$a_n^\dag  a_m \left| m \right\rangle  = a_n^\dag
+\left| 0 \right\rangle  = \left| n \right\rangle $，得证。 \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+这里使用了费米子波函数的交换反对称性：
+
+\begin{equation}
+\left| {m,n} \right\rangle  = - \left| {n,m} \right\rangle ,
+\end{equation}
+
+
+再者：$a_m^\dag  \left| 0 \right\rangle  = \left| m \right\rangle
+$，$a_n^\dag  \left| m \right\rangle  = \left| {n,m} \right\rangle
+$；$a_n^\dag  \left| 0 \right\rangle  = \left| n \right\rangle
+$，$a_m^\dag  \left| n \right\rangle  = \left| {m,n} \right\rangle
+$；由此可证：$a_m^\dag a_n^\dag   =  - a_n^\dag  a_m^\dag $,
+即：$\left\{ a_m^\dag , a_n^\dag \right\} = 0$。
+
+对湮灭算符，$a_m \left| {m,n} \right\rangle  = \left| n
+\right\rangle $，$a_n \left| {m,n} \right\rangle  =  - a_n \left|
+{n,m} \right\rangle  =  - \left| m \right\rangle $；$a_n a_m \left|
+{m,n} \right\rangle  = \left| 0 \right\rangle $，$a_m a_n \left|
+{m,n} \right\rangle  =  - \left| 0 \right\rangle $；由此可证$\{a_m,
+a_n\} =
+0$。
+
+
+注：这里的产生、湮灭算符想象为在行列式中增加或减少一行，行指标为量子态的指标。玻色系的证明思路大体相同，只是玻色系“行列式”的每一项都取正号。
+
+按此思路将大大简化占有数表象下对易关系的证明，并有利于理解概念。
+
+
+\subsubsection{玻色系统}
+
+对玻色系统而言，假设两个玻色子\index{Boson: 玻色子}，一个玻色子处在$m$态，另一个玻色子处在$n$态。如果$m \ne n$, 波函数应写为如下形式：
+
+\begin{equation}\label{two bosons wavefunction}
+\begin{gathered}
+\psi _{m,n}^B (q_1 ,q_2 ) = \frac{1} {{\sqrt 2 }}\left|
+{\begin{array}{*{20}c}
+   {\psi _m (q_1 )} & {\psi _m (q_2 )}  \\
+   {\psi _n (q_1 )} & {\psi _n (q_2 )}  \\
+\end{array} } \right|_+ \hfill \\
+= \frac{1}{{\sqrt 2 }}\left( {\psi _m (q_1 )\psi _n (q_2 ) + \psi _m
+(q_2 )\psi _n (q_1 )} \right) \hfill \\
+\end{gathered}
+\end{equation}
+
+
+如果$m=n$的话，$\psi_{m,m}^B(q_1,q_2) = \sqrt 2
+\psi_m(q_1)\psi_m(q_2)$，但这样的波函数没有归一化，归一化后：
+
+\begin{equation*}
+\psi_{m,m}^B(q_1,q_2) = \psi_m(q_1) \psi_m(q_2) .
+\end{equation*}
+
+现在定义映射：
+
+\begin{equation*}
+\psi_m(q) \to a_m^{\dagger} \left| 0 \right\rangle, \psi_n(q) \to
+a_n^{\dagger} \left| 0 \right\rangle
+\end{equation*}
+
+
+当$m \ne n$时，
+
+\begin{center}
+
+$\frac{1}{{\sqrt 2 }}\left( {\psi _m (q_1 )\psi _n (q_2 ) + \psi _m
+(q_2 )\psi _n (q_1 )} \right) = \left| {m,n} \right\rangle  = \left|
+{n,m} \right\rangle $
+
+$\to a_m^\dag  a_n^\dag  \left| 0 \right\rangle = a_n^\dag  a_m^\dag
+\left| 0 \right\rangle $.
+
+\end{center}
+
+$m=n$时，如果简单地把
+
+\begin{center}
+
+$\frac{1}{{\sqrt 2 }}\left( {\psi _m (q_1 )\psi _m (q_2 ) + \psi _m
+(q_2 )\psi _m (q_1 )} \right) = \sqrt 2 \psi _m (q_1 )\psi _m (q_2
+)$
+
+$\to \left( {a_m^\dag  } \right)^2 \left| 0 \right\rangle$,
+
+\end{center}
+
+在形式上与$m \ne n$时相同，但$\left( {a_m^\dag  } \right)^2 \left| 0
+\right\rangle$不是归一化的。归一化后的波函数即占有数表象\index{Occupation representation: 占有数表象}下的$\left|
+{2_m } \right\rangle$：
+
+\begin{equation}\label{two bosons}
+\left| {2_m } \right\rangle  = \frac{1}{{\sqrt 2 }}\left( {a_m^\dag
+} \right)^2 \left| 0 \right\rangle ,
+\end{equation}
+
+
+即:
+
+\begin{equation*}
+\left( {a^\dag  } \right)^2 \left| 0 \right\rangle  = a^\dag \left|
+1 \right\rangle  = \sqrt 2 \left| 2 \right\rangle
+\end{equation*}
+
+
+推广到一般情形，考虑$N$个玻色子（写成“行列式”的形式）：
+
+
+\begin{equation}\label{N bosons}
+\begin{gathered}
+\psi_{k_1,k_2,...,k_N}^B(q_1,q_2,...,q_N) \hfill \\
+= \left|
+{\begin{array}{*{20}c}
+   {\psi _{k_1 } (q_1 )} & {\psi _{k_1 } (q_2 )} & {...} & {\psi _{k_1 } (q_N )}  \\
+   {\psi _{k_2 } (q_1 )} & {\psi _{k_2 } (q_2 )} & {...} & {\psi _{k_2 } (q_N )}  \\
+   {...} & {...} & {...} & {...}  \\
+   {\psi _{k_N } (q_1 )} & {\psi _{k_N } (q_2 )} & {...} & {\psi _{k_N } (q_N )}  \\
+ \end{array} } \right|_ + \hfill \\
+= \frac{1}{\sqrt {N!}} \sum\limits_P \psi_{k_1}(q_{P1})
+\psi_{k_2}(q_{P2})...\psi_{k_N}(q_{PN}) \hfill \\
+\end{gathered}
+\end{equation}
+
+
+$\sum\limits_P$是对位置的轮换, 体现了玻色子的交换对称性,
+并不改变对态的占有数分布,
+所以各轮换项都对应同一个占有数表象下的态矢量 $\left|n_1,n_2,...
+\right\rangle$。这里的指标$k_1,k_2,...$（量子态）可能有重复,
+假设有$n_1$个甲态, $n_2$个乙态等等, “行列式”形式的波函数(\ref{N
+bosons})映射为$(a_1^{\dagger})^{n_1} (a_2^{\dagger})^{n_2}... \left|
+0 \right\rangle$。它不是归一化的波函数, 归一化因子是$\frac{1}{{\sqrt
+{\prod\limits_i {n_i !} } }}$，即：
+
+\begin{equation}\label{Normalized bosons occ rep}
+\left| {n_1 ,n_2 ,...} \right\rangle = \frac{1}{{\sqrt {
+\prod\limits_i {n_i !} } }} (a_1^{\dagger})^{n_1}
+(a_2^{\dagger})^{n_2} ... \left| 0 \right\rangle .
+\end{equation}
+
+
+
+\subsubsection*{证明如下}
+
+\begin{center}
+
+$\psi_{k_1,k_2,...,k_N}^B(q_1,q_2,...,q_N) = \frac{1}{\sqrt {N!}}
+\sum\limits_P \psi_{k_1}(q_{P1})
+\psi_{k_2}(q_{P2})...\psi_{k_N}(q_{PN})$
+
+$\to \prod\limits_{i = 1}^N {a_{k_i }^\dag  \left| 0 \right\rangle
+}$
+
+\end{center}
+
+如果所有的$k_i$相互都不同，那么波函数已经归一化了，若存在$k_i =
+k_j$，波函数就不是归一化的。
+
+
+考虑到玻色子允许相同量子态占据多个粒子，对所有的$\{k_i\}$进行重新分组，假设$k_1$态上占据了$n_1$个玻色子，等等。轮换$\prod\limits_{i
+= 1}^N {\psi _{k_i } (q_{Pi} )}$中会出现很多相同的项，$\sum\limits_P
+\psi ... \psi$中共有$N!$项，对占据$k_1$态的$n_1$个玻色子而言，$n_1
+!$轮换对应相同的项。
+
+所以：因多个玻色子可占据相同的态导致轮换$\sum\limits_P
+\prod\limits_{i = 1}^N {\psi _{k_i } (q_{Pi} )}$中有$\prod\limits_i
+{n_i !}$项是可以合并的，即：
+
+\begin{equation*}
+\frac{1}{{\sqrt {N!} }}\sum\limits_P {\psi ...\psi }  =
+\frac{{\mathop \prod \limits_i n_i !}}{{\sqrt {N!} }}\sum\limits_{\{n_i \} } {\psi ...\psi }
+\end{equation*}
+
+
+合并后的求和就不是对轮换\index{Permutation: 轮换}$\sum\limits_P \psi ...
+\psi$作的，而是对$n_i$分布作的，共有$\frac{{N!}}{{\prod\limits_i {n_i !} }}$项。因此：
+
+\begin{equation*}
+\sqrt{ \frac{\prod\limits_i {n_i !}}{N!} }  \sum\limits_{\{n_i \} } {\psi ...\psi } =  \left| n_1, n_2, ...\right\rangle
+\end{equation*}
+
+是归一的。于是：
+
+\begin{equation*}
+(a_1^{\dagger})^{n_1}(a_2^{\dagger})^{n_2}...\left| 0 \right\rangle
+= \sqrt {\mathop \prod \limits_i n_i !} \sqrt {\frac{{\mathop \prod
+\limits_i n_i !}}{{N!}}} \sum\limits_{\{ n_i \} } {\psi ...\psi }  =
+\sqrt {\mathop \prod \limits_i n_i !} \left| {n_1 ,n_2 ,...}
+\right\rangle .
+\end{equation*}
+
+公式(\ref{Normalized bosons occ rep})得证。
+
+
+\subsubsection*{一个简单的例子：}
+
+假设有3个玻色子，2个粒子在1态，1个粒子在2态。
+
+\begin{equation*}
+\left( {a_1^\dag  } \right)^2 a_2^\dag  \left| 0 \right\rangle  =
+\frac{1} {{\sqrt {3!} }}\left| {...} \right|_{3 \times 3}  =
+\frac{1} {{\sqrt {3!} }}\sum\limits_P {\psi \psi \psi }
+\end{equation*}
+
+
+$\sum\limits_P
+{}$中共有六项。“3个玻色子，2个粒子在1态，1个粒子在2态。”组合数是：$\frac{3!}{2!1!}
+= 3$, 即有2项是重复的。因此：
+
+\begin{equation*}
+\left( {a_1^\dag  } \right)^2 a_2^\dag  \left| 0 \right\rangle =
+\frac{1} {{\sqrt {3!} }}\sum\limits_P {\psi \psi \psi }  =
+\frac{{2!}} {{\sqrt {3!} }}\sum\limits_{\{ 2,1\} } {\psi \psi \psi }
+\end{equation*}
+
+
+$\sum\limits_{\{ 2,1\} } {\psi \psi \psi }$有3项, 分别是：
+
+\begin{center}
+
+$\psi_1(q_1)\psi_1(q_2)\psi_2(q_3)$,
+
+$\psi_1(q_1)\psi_2(q_2)\psi_1(q_3)$,
+
+$\psi_2(q_1)\psi_1(q_2)\psi_1(q_3)$.
+
+\end{center}
+
+$\frac{1}{\sqrt 3}\sum\limits_{\{ 2,1\} } {\psi \psi \psi }$
+是归一化的，记为占有数表象下的态矢量：$\left| 2,1 \right\rangle$.
+因此：
+
+\begin{equation*}
+\left| 2,1 \right\rangle = \frac{1}{\sqrt 2!} \left( {a_1^\dag  }
+\right)^2 a_2^\dag  \left| 0 \right\rangle
+\end{equation*}
+
+\subsubsection{玻色子的对易关系：}
+
+假设真空态已经是归一化的，$\left\langle 0 \right.\left| 0
+\right\rangle  = 1$，$a^\dag  \left| 0 \right\rangle  = \left| 1
+\right\rangle$，$a^\dag  \left| 1 \right\rangle  = \sqrt 2 \left| 2
+\right\rangle$，$a^\dag  \left| 2 \right\rangle  = \frac{1}{{\sqrt 2
+}}\left( {a^\dag  } \right)^3 \left| 0 \right\rangle  = \sqrt 3
+\left| 3 \right\rangle $，...，推出：
+
+\begin{equation}\label{boson recursion creat}
+a^\dag  \left| n \right\rangle  = \sqrt {n + 1} \left| {n + 1}
+\right\rangle .
+\end{equation}
+
+
+现在定义湮灭算符$a$，使得$a \left| 0 \right\rangle =
+0$，假设量子态$\left| {m,k}
+\right\rangle$，即一个玻色子处在$m$态，另一个玻色子处在$k$态，并且$m \ne k$。湮灭算符$a_m$，$a_k$应满足：
+
+\begin{equation*}
+a_m \left| {m,k} \right\rangle = \left| k \right\rangle , a_k \left|
+{m,k} \right\rangle = \left| m \right\rangle
+\end{equation*}
+
+
+如果两个玻色子占据相同的态($m$)：
+
+\begin{equation*}
+a_m (a_m^{\dag})^2 \left| 0 \right\rangle = a_m a_m^{\dag} \left|
+{1_m} \right\rangle = \sqrt 2 a_m  \left| {2_m} \right\rangle = 2
+a_m^{\dag} \left| 0 \right\rangle = 2 \left| {1_m} \right\rangle
+\end{equation*}
+
+
+湮灭算符的效果是拿掉“行列式”的一行；现在“行列式”的两行有相同指标，拿掉一行的方式有两种。
+
+这意味着：$a \left| 2 \right\rangle = \sqrt 2 \left| 1 \right\rangle
+$。这个结果可推广为：
+
+\begin{equation*}
+a \left| n \right\rangle = \sqrt n \left| {n-1} \right\rangle .
+\end{equation*}
+
+对$n$行有相同指标的行列式——相同的量子态上有$n$个粒子占据——
+拿掉一行的方式有$n$种, 即：
+
+\begin{equation*}
+a (a^{\dag})^n \left| 0 \right\rangle = n (a^{\dag})^{n-1} \left| 0
+\right\rangle , a \sqrt {n!} \left| n \right\rangle  = n \sqrt
+{(n-1)!} \left| {n-1} \right\rangle
+\end{equation*}
+
+推出:
+
+\begin{equation}\label{boson recursion minus}
+a \left| n \right\rangle = \sqrt n \left| {n-1} \right\rangle
+\end{equation}
+
+
+由$a^\dagger$和$a$，可定义数算符(number operator)\index{Number operator: 数算符}：
+
+\begin{equation}\label{Boson number operator}
+a^{\dag} a \left| n \right\rangle = n \left| n \right\rangle
+\end{equation}
+
+和玻色对易关系：
+
+\begin{equation}\label{Boson commutation}
+[a, a^{\dagger}] =1 .
+\end{equation}
+
+
+\subsection{力学量的二次量子化形式}
+
+定义单体算符：
+
+\begin{equation}\label{one body operator}
+A = \sum\limits_{m,n} {\left| m \right\rangle \left\langle m
+\right|A\left| n \right\rangle \left\langle n \right|}  =
+\sum\limits_{m,n} {A_{mn} \left| m \right\rangle \left\langle n
+\right|}  \to A_{mn} a_m^\dag  a_n
+\end{equation}
+
+假设：$\left| {\nu \rho } \right\rangle  = a_\nu ^\dag  a_\rho ^\dag
+\left| 0 \right\rangle $，那么：$\left\langle {\nu \rho } \right| =
+\left\langle 0 \right|a_\rho  a_\nu $, 定义双体算符：
+
+\begin{equation}\label{two body operator}
+B = \sum\limits_{\lambda \mu ,\nu \rho } {\left| {\lambda \mu }
+\right\rangle B_{\lambda \mu ,\nu \rho } \left\langle {\nu \rho }
+\right|}  \to B_{\lambda \mu ,\nu \rho } a_\lambda ^\dag a_\mu ^\dag
+a_\rho  a_\nu
+\end{equation}
+
+注意这里指标的次序, 如果是费米型算符, 指标的次序是不能任意颠倒的.
+
+\subsection*{练习}
+
+\begin{enumerate}
+
+\item 
+
+对玻色子, 请证明公式: 
+
+\begin{eqnarray*}
+a^\dagger \left| n \right\rangle & = & \sqrt{n+1} \left| n+1  \right\rangle  \\
+a \left| n \right\rangle & = & \sqrt{n} \left| n-1 \right\rangle  \\
+a^\dagger a \left| n \right\rangle & = & n \left| n \right\rangle \\
+\left[ a, a^{\dagger} \right]  & = & 1 .\\
+\end{eqnarray*}
+
+\item 对玻色子，请证明：$[a^{\dag}a, a]=-a$, $[a^{\dag}a, a^{\dag}]=a^{\dag}$.
+
+\end{enumerate}
+
+\subsection*{阅读}
+
+\begin{enumerate}
+\item 
+
+S. Doniach \& E.H. Sondheimer, Green's Functions For Solid State Physicists.
+
+%\url{http://ishare.iask.sina.com.cn/f/12058139.html} (APPENDIX 1)
+
+\end{enumerate}
