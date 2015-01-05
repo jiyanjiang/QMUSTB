@@ -1,0 +1,404 @@
+\section{电子在磁场中的运动}
+
+\begin{quotation}
+``量子力学的主要特征并不是不可对易代数，而是概率幅的存在。''\qquad 狄拉克
+\end{quotation}
+
+在量子力学中，波函数取复数，因此要完整地了解波函数及其物理含义，必须考虑波函数的振幅和相位。
+波函数振幅的物理意义，按玻恩几率波理论的解释，波函数振幅的平方对应于发现粒子的几率, 而波函数的相位则是所有干涉现象的根源\footnote{
+狄拉克曾就不可对易性与波函数，哪一个是量子力学的主要特征进行了论述：
+``量子力学的主要特征并不是不可对易代数，而是概率幅的存在，后者是全部原子过程的基础。概率幅是与实验相联系的，...
+概率幅的模方是我们能观测的某种量，即实验者所测量到的概率，但除此以外还有相位，它是模为1的数，它的变化不影响模方。
+但这个相位是极其重要的，因为它是干涉现象的根源，而其物理含义是极其隐晦难解的......相位这个物理量很巧妙地隐藏在大自然中，
+正是由于它隐藏得如此巧妙，人们才未能更早建立起量子力学。''
+}。本章将专门讨论波函数相位的意义，特别是存在电磁场时波函数相位的意义。
+
+\subsection{带电粒子在电磁场中的拉格朗日函数}
+
+考虑质量$m$，带电荷$e$的粒子在电场$E$和磁场$B$中运动，带电粒子受洛仑兹力作用：
+
+\begin{equation}\label{18-1}
+F = e\left( {E + v \times B} \right)
+\end{equation}
+
+电磁场满足Maxwell方程组：
+
+\index{Maxwell's equations: 麦克斯韦方程组}
+
+\begin{equation}
+\left\{ \begin{array}{l}
+ \nabla  \cdot E = \frac{\rho }{{\varepsilon _0 }} \\
+ \nabla  \times E =  - \frac{{\partial B}}{{\partial t}} \\
+ \nabla  \cdot B = 0 \\
+ \nabla  \times B = \mu _0 \varepsilon _0 \frac{{\partial E}}{{\partial t}} + \mu _0 j \\
+ \end{array} \right.
+\end{equation}
+
+根据矢量分析中恒等式：$\nabla  \cdot \left( {\nabla  \times A} \right) \equiv 0$, $\nabla  \times \left( {\nabla \varphi } \right) \equiv 0$; 可以分别引入电磁场矢量势$A$和标量势$\varphi$：
+
+\begin{center}
+$B = \nabla  \times A$, $E =  - \nabla \varphi  - \frac{{\partial A}}{{\partial t}}$
+\end{center}
+
+洛仑兹力可表示为：$F = e\left[ { - \nabla \varphi  - \frac{{\partial A}}{{\partial t}} + v \times \nabla  \times A} \right]$
+
+写成分量形式：
+
+$\nabla  \times A = \left( {\begin{array}{*{20}c}
+   i & j & k  \\
+   {\partial _x } & {\partial _y } & {\partial _z }  \\
+   {A_x } & {A_y } & {A_z }  \\
+\end{array}} \right) = \left( {\begin{array}{*{20}c}
+   {\partial _y A_z  - \partial _z A_y }  \\
+   {\partial _z A_x  - \partial _x A_z }  \\
+   {\partial _x A_y  - \partial _y A_x }  \\
+\end{array}} \right)$
+
+\begin{eqnarray*}
+ v \times \nabla  \times A & = & \left( {\begin{array}{*{20}c}
+   i & j & k  \\
+   {v_x } & {v_y } & {v_z }  \\
+   {\partial _y A_z  - \partial _z A_y } & {\partial _z A_x  - \partial _x A_z } & {\partial _x A_y  - \partial _y A_x }  \\
+\end{array}} \right) \\
+{} & = & \left( {\begin{array}{*{20}c}
+   {v_y \left( {\partial _x A_y  - \partial _y A_x } \right) - v_z \left( {\partial _z A_x  - \partial _x A_z } \right)}  \\
+   {v_z \left( {\partial _y A_z  - \partial _z A_y } \right) - v_x \left( {\partial _x A_y  - \partial _y A_x } \right)}  \\
+   {v_x \left( {\partial _z A_x  - \partial _x A_z } \right) - v_y \left( {\partial _y A_z  - \partial _z A_y } \right)}  \\
+\end{array}} \right) 
+\end{eqnarray*}
+
+
+
+洛仑兹力的$x$分量：
+
+$\begin{array}{l}
+ F_x  = e\left[ { - \partial _x \varphi  - \partial _t A_x  + v_y \left( {\partial _x A_y  - \partial _y A_x } \right) - v_z \left( {\partial _z A_x  - \partial _x A_z } \right)} \right] \\
+  = e\left[ { - \frac{{\partial \varphi }}{{\partial x}} - \frac{{\partial A_x }}{{\partial t}} + v_y \left( {\frac{{\partial A_y }}{{\partial x}} - \frac{{\partial A_x }}{{\partial y}}} \right) - v_z \left( {\frac{{\partial A_x }}{{\partial z}} - \frac{{\partial A_z }}{{\partial x}}} \right)} \right] \\
+ \end{array}$
+
+利用：$\frac{{dA_x }}{{dt}} = \frac{{\partial A_x }}{{\partial t}} + v_x \frac{{\partial A_x }}{{\partial x}} + v_y \frac{{\partial A_x }}{{\partial y}} + v_z \frac{{\partial A_x }}{{\partial z}}$
+
+\begin{center}
+$F_x  = e\left[ { - \frac{{\partial \varphi }}{{\partial x}} - \frac{{dA_x }}{{dt}} + v_x \frac{{\partial A_x }}{{\partial x}} + v_y \frac{{\partial A_y }}{{\partial x}} + v_z \frac{{\partial A_z }}{{\partial x}}} \right]$
+\end{center}
+
+由于$A,\varphi $都不是$v$的函数：
+
+\begin{center}
+$\frac{{dA_x }}{{dt}} = \frac{d}{{dt}}\left[ {\frac{\partial }{{\partial v_x }}\left( {v \cdot A} \right)} \right] = \frac{d}{{dt}}\left[ {\frac{\partial }{{\partial v_x }}\left( { - \varphi  + v \cdot A} \right)} \right]$
+\end{center}
+
+其中：$v_x \frac{{\partial A_x }}{{\partial x}} + v_y \frac{{\partial A_y }}{{\partial x}} + v_z \frac{{\partial A_z }}{{\partial x}} = v \cdot \frac{{\partial A}}{{\partial x}} = \frac{\partial }{{\partial x}}\left( {v \cdot A} \right)$
+
+所以：$F_x  = e\left[ { - \frac{\partial }{{\partial x}}\left( {\varphi  - v \cdot A} \right) + \frac{d}{{dt}}\left( {\frac{\partial }{{\partial v_x }}\left( {\varphi  - v \cdot A} \right)} \right)} \right]$
+
+根据广义力的定义：
+
+\begin{center}
+$Q_\alpha   =  - \frac{{\partial U}}{{\partial q_\alpha  }} + \frac{d}{{dt}}\frac{{\partial U}}{{\partial \dot q_\alpha  }}$，$U = U\left( {q,\dot q} \right)$是广义势能；
+\end{center}
+
+
+带电粒子在电磁场中的广义势能：
+
+\begin{equation}\label{18-2}
+U = e\varphi  - ev \cdot A
+\end{equation}
+
+拉格朗日方程：
+
+\begin{equation}
+\frac{d}{{dt}}\frac{{\partial T}}{{\partial \dot q_\alpha  }} - \frac{{\partial T}}{{\partial q_\alpha  }} = Q_\alpha 
+\end{equation}
+
+带电粒子在电磁场中的拉格朗日函数：
+
+\begin{equation}\label{18-3}
+L = T - U = \frac{1}{2}mv^2  - e\varphi  + e\vec v \cdot \vec A
+\end{equation}
+
+\subsection{正则量子化}
+
+经典力学中泊松括号：
+
+\index{Poisson bracket: 泊松括号}
+
+\index{Canonical quantization: 正则量子化}
+
+\begin{equation}\label{18-4}
+\begin{array}{l}
+\left\{ {F,H} \right\} = \sum\limits_{i = 1}^f {\frac{{\partial F}}{{\partial q_i }}\frac{{\partial H}}{{\partial p_i }} - \frac{{\partial F}}{{\partial p_i }}\frac{{\partial H}}{{\partial q_i }}}, \\
+\left\{ {q_\alpha  ,p_\beta  } \right\} = \sum\limits_{i = 1}^f {\frac{{\partial q_\alpha  }}{{\partial q_i }}\frac{{\partial p_\beta  }}{{\partial p_i }} - \frac{{\partial q_\alpha  }}{{\partial p_i }}\frac{{\partial p_\beta  }}{{\partial q_i }}}  = \delta _{\alpha \beta } \\
+\end{array} 
+\end{equation}
+
+过渡到量子力学，量子泊松括号：
+
+\begin{equation}\label{18-5}
+\frac{1}{{i\hbar }}\left[ {\widehat F,\widehat H} \right] = \frac{1}{{i\hbar }}\left( {\widehat F\widehat H - \widehat H\widehat F} \right), \\
+\frac{1}{{i\hbar }}\left[ {\widehat q_\alpha  ,\widehat p_\beta  } \right] = \frac{1}{{i\hbar }}\left[ {q_\alpha  ,\frac{\hbar }{i}\frac{\partial }{{\partial q_\beta  }}} \right] = \delta _{\alpha \beta }
+\end{equation}
+
+把正则动量换为算符：$\widehat p = \frac{\hbar }{i}\frac{\partial }{{\partial q}} = \frac{\hbar }{i}\nabla $, 正则坐标：$\widehat q = q$，即由经典力学转化为量子力学，这个步骤称为正则量子化。
+
+由电子在电磁场中拉格朗日函数\ref{18-3}，正则动量：
+
+\begin{equation}\label{18-6}
+\vec p = \frac{{\partial L}}{{\partial v}} = m\vec v + e\vec A
+\end{equation}
+
+可见带电粒子在电磁场中的正则动量不等于机械动量$m \vec v$.
+
+哈密顿函数为：
+
+\begin{equation}\label{18-7}
+H = \sum {p_\alpha  \dot q_\alpha  }  - L = \left( {mv + eA} \right) \cdot v - {\textstyle{1 \over 2}}mv^2  + e\varphi  - ev \cdot A = {\textstyle{1 \over 2}}mv^2  + e\varphi
+\end{equation}
+
+根据正则动量表达式\ref{18-6}：$m\vec v = \vec p - e\vec A$，哈密顿函数表示为：
+
+\begin{equation}\label{18-8}
+H = \frac{1}{{2m}}\left( {\vec p - e\vec A} \right)^2  + e\varphi
+\end{equation}
+
+哈密顿算符表示为：
+
+\begin{equation}\label{18-9}
+H = \frac{1}{{2m}}\left( {\widehat p - e\vec A} \right)^2  + e\varphi
+\end{equation}
+
+薛定谔方程：
+
+\begin{equation}\label{18-10}
+i\hbar \frac{\partial }{{\partial t}}\psi  = \left[ {\frac{1}{{2m}}\left( {\widehat p - e\vec A} \right)^2  + e\varphi } \right]\psi
+\end{equation}
+
+一般而言算符$\hat p$与$\vec A$不对易：
+
+\begin{center}
+$\left( {\widehat p - e\vec A} \right)^2  = \left( {\widehat p - e\vec A} \right) \cdot \left( {\widehat p - e\vec A} \right) = \widehat p^2  - e\vec A \cdot \widehat p - e\widehat p \cdot \vec A + e^2 \vec A^2 $
+
+
+$\nabla  \cdot A\psi  = \frac{\partial }{{\partial x}}A_x \psi  = \psi \frac{\partial }{{\partial x}}A_x  + A_x \frac{\partial }{{\partial x}}\psi  = \psi \left( {\nabla  \cdot A} \right) + A \cdot \nabla \psi $
+
+\end{center}
+
+即：$\widehat p \cdot A = \frac{\hbar }{i}\left( {\nabla  \cdot A} \right) + A \cdot \widehat p$
+
+所以：$\left( {\widehat p - e\vec A} \right)^2  = \widehat p^2  - 2e\vec A \cdot \widehat p - e\frac{\hbar }{i}\left( {\nabla  \cdot \vec A} \right) + e^2 \vec A^2 $
+
+如取库仑规范：$\nabla  \cdot \vec A = 0$
+
+薛定谔方程：
+
+\begin{equation}\label{18-11}
+i\hbar \frac{\partial }{{\partial t}}\psi  = \left[ {\frac{1}{{2m}}\left( {\widehat p
+^2  - 2eA \cdot \widehat p + e^2 A^2 } \right) + e\varphi } \right]\psi
+\end{equation}
+
+
+
+\subsection{规范变换}
+
+\subsubsection{规范不变性}
+
+\index{Gauge invariance: 规范不变性}
+
+$E, B$与$\vec A, \varphi$是描写电磁场的两种等价方式，它们之间的关系是：
+
+\begin{equation}\label{18-12}
+B = \nabla  \times A, \\
+E =  - \nabla \varphi  - \frac{{\partial A}}{{\partial t}}
+\end{equation}
+
+$E, B$与$\vec A, \varphi$之间的对应关系不是一一对应的，很多组$\vec A, \varphi$都可以对应相同的$E, B$，因此 具有附加的规范自由度。
+
+可以证明：
+
+\begin{equation}\label{18-13}
+A' = A + \nabla f , \\
+\varphi ' = \varphi  - \frac{{\partial f}}{{\partial t}}
+\end{equation}
+
+其中$f = f\left( {r,t} \right)$是任意标量函数，描述的是与$A,\varphi $相同的$E,B$，变换\ref{18-13}称为规范变换；不同的标量函数对应不同的规范变换。
+
+\begin{center}
+$\left\{ \begin{array}{l}
+ \nabla  \times A' = \nabla  \times A + \nabla  \times \nabla f = \nabla  \times A = B \\
+  - \nabla \varphi ' - \frac{{\partial A'}}{{\partial t}} =  - \nabla \varphi  + \nabla \frac{{\partial f}}{{\partial t}} - \frac{{\partial A}}{{\partial t}} - \frac{\partial }{{\partial t}}\nabla f =  - \nabla \varphi  - \frac{{\partial A}}{{\partial t}} = E \\
+ \end{array} \right.$
+\end{center}
+
+物理可测量量一定是规范不变的，即不同规范变换对应相同的物理规律（方程式），称为规范对称性或规范不变性（Gauge Invariance）；
+
+
+在规范变换下，波函数$\psi$变换为$\psi ' = \psi \exp \left( {i{\textstyle{e \over \hbar }}f\left( {r,t} \right)} \right)$，并满足薛定谔方程：
+
+\begin{center}
+$i\hbar \frac{\partial }{{\partial t}}\psi ' = \left[ {\frac{1}{{2m}}\left( {\widehat p - eA'} \right)^2  + e\varphi '} \right]\psi '$
+
+$\begin{array}{l}
+ i\hbar \frac{\partial }{{\partial t}}\psi ' - e\varphi '\psi ' = i\hbar \frac{\partial }{{\partial t}}\left( {\psi e^{i{\textstyle{e \over \hbar }}f} } \right) - e\left( {\varphi  - \frac{{\partial f}}{{\partial t}}} \right)\psi e^{i{\textstyle{e \over \hbar }}f}  \\
+  = i\hbar e^{i{\textstyle{e \over \hbar }}f} \frac{{\partial \psi }}{{\partial t}} + i\hbar \psi \left( {i\frac{e}{\hbar }\frac{{\partial f}}{{\partial t}}} \right)e^{i{\textstyle{e \over \hbar }}f}  - e\varphi \psi e^{i{\textstyle{e \over \hbar }}f}  + e\psi e^{i{\textstyle{e \over \hbar }}f} \frac{{\partial f}}{{\partial t}} \\
+  = i\hbar e^{i{\textstyle{e \over \hbar }}f} \frac{{\partial \psi }}{{\partial t}} - e\psi e^{i{\textstyle{e \over \hbar }}f} \frac{{\partial f}}{{\partial t}} - e\varphi \psi e^{i{\textstyle{e \over \hbar }}f}  + e\psi e^{i{\textstyle{e \over \hbar }}f} \frac{{\partial f}}{{\partial t}} = e^{i{\textstyle{e \over \hbar }}f} \left( {i\hbar \frac{{\partial \psi }}{{\partial t}} - e\varphi \psi } \right) \\
+ \end{array}$
+
+
+$\begin{array}{l}
+ \left( {\widehat p - eA'} \right)\psi ' = \left[ {\frac{\hbar }{i}\nabla  - e\left( {A + \nabla f} \right)} \right]\psi e^{i{\textstyle{e \over \hbar }}f}  \\
+  = \frac{\hbar }{i}e^{i{\textstyle{e \over \hbar }}f} \nabla \psi  + \frac{\hbar }{i}\psi e^{i{\textstyle{e \over \hbar }}f} \left( {i\frac{e}{\hbar }\nabla f} \right) - e\left( {A + \nabla f} \right)e^{i{\textstyle{e \over \hbar }}f} \psi  \\
+  = \frac{\hbar }{i}e^{i{\textstyle{e \over \hbar }}f} \nabla \psi  + e\psi e^{i{\textstyle{e \over \hbar }}f} \nabla f - eAe^{i{\textstyle{e \over \hbar }}f} \psi  - e\psi e^{i{\textstyle{e \over \hbar }}f} \nabla f \\
+  = e^{i{\textstyle{e \over \hbar }}f} \left( {\frac{\hbar }{i}\nabla \psi  - eA\psi } \right) = e^{i{\textstyle{e \over \hbar }}f} \left( {\widehat p - eA} \right)\psi  \\
+ \end{array}$
+
+
+\end{center}
+
+类似地：$\left( {\widehat p - eA'} \right)^2 \psi ' = e^{i{\textstyle{e \over \hbar }}f} \left( {\widehat p - eA} \right)^2 \psi $
+
+所以：
+
+\begin{equation}\label{18-14}
+e^{i{\textstyle{e \over \hbar }}f} \left( {i\hbar \frac{\partial }{{\partial t}}} \right)\psi  = e^{i{\textstyle{e \over \hbar }}f} \left[ {\frac{1}{{2m}}\left( {\widehat p - eA} \right)^2  + e\varphi } \right]\psi
+\end{equation}
+
+即薛定谔方程：$i\hbar \frac{\partial }{{\partial t}}\psi  = \left[ {\frac{1}{{2m}}\left( {\widehat p - e\vec A} \right)^2  + e\varphi } \right]\psi $
+
+可见在量子力学中为保证Maxwell方程的规范不变性，必须在波函数中引入一个相位因子：$\exp \left( {i{\textstyle{e \over \hbar }}f\left( {r,t} \right)} \right)$，函数$f(r,t)$在空间不同点，有不同的取值，这类规范变换称为定域规范变换。
+与之对应的概念是全局规范变换，即空间各点相位全同$\exp \left( {i\alpha } \right)$；对于自由粒子的薛定谔方程：$i\hbar \frac{\partial }{{\partial t}}\psi  = \frac{{\widehat p^2 }}{{2m}}\psi $，在全局规范变换下是不变的，即：$i\hbar \frac{\partial }{{\partial t}}\psi ' = \frac{{\widehat p^2 }}{{2m}}\psi '$。
+
+但对于定域规范变换，运动方程不具备这种不变性，变换后的薛定谔方程将不再描述自由粒子，而将引入新的力场。即：对称性决定相互作用。
+
+
+\subsubsection{Dirac因子}
+
+自由粒子可用薛定谔方程：$i\hbar \frac{\partial }{{\partial t}}\psi  = \frac{{\widehat p^2 }}{{2m}}\psi $，描述；考虑规范变换$\nabla f(r) = A(r)$，$\psi  = \psi '\exp \left( { - i{\textstyle{e \over \hbar }}f\left( {r,t} \right)} \right)$，求规范变换后的哈密顿量。
+
+薛定谔方程左侧：
+
+\begin{eqnarray*}
+i\hbar \frac{\partial }{{\partial t}}\psi & = & i\hbar \frac{\partial }{{\partial t}}\psi '{\mathop{\rm e}\nolimits} ^{ - i{\textstyle{e \over \hbar }}f\left( r \right)} \\
+{} & = & {\mathop{\rm e}\nolimits} ^{ - i{\textstyle{e \over \hbar }}f\left( r \right)} i\hbar \frac{\partial }{{\partial t}}\psi ' + {\mathop{\rm e}\nolimits} ^{ - i{\textstyle{e \over \hbar }}f\left( r \right)} \left( {\frac{e}{{\hbar i}}} \right)i\hbar \frac{\partial }{{\partial t}}f(r) \\
+{} & = & {\mathop{\rm e}\nolimits} ^{ - i{\textstyle{e \over \hbar }}f\left( r \right)} i\hbar \frac{\partial }{{\partial t}}\psi '
+\end{eqnarray*}
+
+薛定谔方程右侧：
+
+\begin{eqnarray*}
+{} &{}&\frac{{\widehat p^2 }}{{2m}}\psi  =  \frac{{\widehat p^2 }}{{2m}}\psi '{\mathop{\rm e}\nolimits} ^{ - i{\textstyle{e \over \hbar }}f } =  - \frac{{\hbar ^2 }}{{2m}}\nabla ^2 \left( {\psi '{\mathop{\rm e}\nolimits} ^{ - i{\textstyle{e \over \hbar }}f  } } \right) \\
+{} &=&  - \frac{{\hbar ^2 }}{{2m}}\nabla \left( {{\mathop{\rm e}\nolimits} ^{ - i{\textstyle{e \over \hbar }}f } \nabla \psi ' + {\mathop{\rm e}\nolimits} ^{ - i{\textstyle{e \over \hbar }}f } \psi '\frac{e}{{\hbar i}}\nabla f} \right) \\
+{} & = &  - \frac{{\hbar ^2 }}{{2m}}\nabla \left( {{\mathop{\rm e}\nolimits} ^{ - i{\textstyle{e \over \hbar }}f } \nabla \psi ' + \frac{e}{{\hbar i}}{\mathop{\rm e}\nolimits} ^{ - i{\textstyle{e \over \hbar }}f } \psi 'A} \right) \\
+{} & = &  - \frac{{\hbar ^2 }}{{2m}}{\mathop{\rm e}\nolimits} ^{ - i{\textstyle{e \over \hbar }}f } \left( {\nabla ^2 \psi ' + \frac{{2e}}{{\hbar i}}A \cdot \nabla \psi ' + \frac{e}{{\hbar i}}\psi '\nabla  \cdot A - \frac{{e^2 }}{{\hbar ^2 }} \psi 'A^2 } \right) \\
+{} & = & \frac{1}{{2m}}{\mathop{\rm e}\nolimits} ^{ - i{\textstyle{e \over \hbar }}f } \left( {\widehat p^2 \psi ' - 2eA \cdot \widehat p\psi ' - e\psi '\widehat p \cdot A + e^2 A^2 \psi '} \right) \\
+{} & = & \frac{1}{{2m}}{\mathop{\rm e}\nolimits} ^{ - i{\textstyle{e \over \hbar }}f } \left( {\widehat p - e\vec A} \right)^2 \psi ' 
+\end{eqnarray*}
+
+比较以上两个式子，得到：
+
+\begin{equation}
+i\hbar \frac{\partial }{{\partial t}}\psi ' = \frac{{\left( {\widehat p - e\vec A} \right)^2 }}{{2m}}\psi '
+\end{equation}
+
+哈密顿量是：
+
+\begin{equation}
+\widehat H = \frac{{\left( {\widehat p - e\vec A} \right)^2 }}{{2m}}
+\end{equation}
+
+与带电粒子在电磁场中的哈密顿量比较知，规范变化后是常磁场情形（磁场$\vec B = \nabla  \times \vec A$不随时间$t$变化，$\varphi  = 0$，电场恒为0）。可见：适当的规范变换可引入电磁相互作用，因此电磁场也被称为规范场。
+
+相因子：
+
+\begin{equation*}
+\exp \left( {i{\textstyle{e \over \hbar }}f\left( r \right)} \right) = \exp \left( {i{\textstyle{e \over \hbar }}\int_r {\nabla f(r') \cdot dr'} } \right) = \exp \left( {i{\textstyle{e \over \hbar }}\int_r {A(r') \cdot dr'} } \right)
+\end{equation*}
+
+称为Dirac因子。相位在空间某点的绝对取值是没有意义的，相位两点之间的差是有意义的，记为：$\delta \phi _{12}  = {\textstyle{e \over \hbar }}\int_1^2 {A(r') \cdot dr'} $，依赖于积分路径的选择。如果1、2点重合，形成闭合回路，相位差为：$\delta \phi  = {\textstyle{e \over \hbar }}\oint_C {A(r) \cdot dr}  = {\textstyle{e \over \hbar }}\oint_S {\nabla  \times A(r) \cdot dS}  = {\textstyle{e \over \hbar }}\oint_S {B \cdot dS}  = \frac{{2\pi e}}{h}\Phi $，$\Phi  = \oint_S {B \cdot dS} $是磁通。
+
+\subsubsection{Aharonov and Bohm效应}
+
+如果带电粒子穿过双缝，双缝后放置螺线管，内部有磁场$B$，磁通$\Phi$，在管外$B = 0,A \ne 0$。由于Dirac因子，不同路径将导致额外的相位差$\delta \phi  = \frac{{2\pi e}}{h}\Phi $，实验可观察到干涉条纹随磁通$\Phi$的变化而移动，单位条纹移动对应磁通变化周期：$\Phi _0  = \frac{h}{e}$。
+
+关于AB效应，请阅读：
+
+``Significance of Electromagnetic Potentials in the Quantum Theory'', Y.Aharonov and D.Bohm,\emph{Physical review}, Vol. \textbf{115}, No.\textbf{3}, 485-491 (1959)；
+
+``Significance of Potentials in Quantum Theory'', W.H.Furry and N.F.Ramsey, \emph{Physical review}, Vol.\textbf{118}, No.\textbf{3}, 623-626 (1960)
+
+
+\subsection{朗道能级}
+
+\index{Landau level: 朗道能级}
+
+带电粒子在磁场$\vec B = B\vec k$中运动，选取规范为：$\vec A = \left( { - By,0,0} \right)$，$\varphi = 0$；电子哈密顿量：
+
+\begin{equation}
+H = \frac{1}{{2m}}\left( {\widehat p - eA} \right)^2  = \frac{1}{{2m}}\left[ {\left( {\widehat p_x  + eBy} \right)^2  + \widehat p_y^2  + \widehat p_z^2 } \right]
+\end{equation}
+
+
+定态薛定谔方程：
+
+\begin{center}
+$\frac{1}{{2m}}\left[ {\left( {\frac{\hbar }{i}\frac{\partial }{{\partial x}} + eBy} \right)^2  - \hbar ^2 \frac{{\partial ^2 }}{{\partial y^2 }} - \hbar ^2 \frac{{\partial ^2 }}{{\partial z^2 }}} \right]\psi  = E\psi $
+
+$\frac{1}{{2m}}\left[ { - \hbar ^2 \frac{{\partial ^2 }}{{\partial x^2 }} + e^2 B^2 y^2  + 2eBy\frac{\hbar }{i}\frac{\partial }{{\partial x}} - \hbar ^2 \frac{{\partial ^2 }}{{\partial y^2 }} - \hbar ^2 \frac{{\partial ^2 }}{{\partial z^2 }}} \right]\psi  = E\psi $
+
+\end{center}
+
+即：$\left[ { - \frac{{\hbar ^2 }}{{2m}}\left( {\frac{{\partial ^2 }}{{\partial x^2 }} + \frac{{\partial ^2 }}{{\partial y^2 }} + \frac{{\partial ^2 }}{{\partial z^2 }}} \right) + \frac{{eBy}}{m}\frac{\hbar }{i}\frac{\partial }{{\partial x}} + \frac{{e^2 B^2 y^2 }}{{2m}}} \right]\psi  = E\psi $
+
+在此规范中：$\left[ {\widehat p_x ,H} \right] = 0$，$\left[ {\widehat p_z ,H} \right] = 0$，所以可用变换：
+
+\begin{equation}
+\psi \left( {x,y,z} \right) = e^{i\alpha x} e^{i\beta z} \varphi \left( y \right)
+\end{equation}
+
+分离变量。
+
+\begin{eqnarray*}
+{} &{}& \left[ { - \frac{{\hbar ^2 }}{{2m}}\left( { - \alpha ^2  - \beta ^2 } \right) - \frac{{\hbar ^2 }}{{2m}}\frac{{\partial ^2 }}{{\partial y^2 }} + \frac{{eB\hbar \alpha }}{m}y + \frac{{e^2 B^2 }}{{2m}}y^2 } \right]e^{i\alpha x} e^{i\beta z} \varphi \left( y \right) \\
+{} & = & Ee^{i\alpha x} e^{i\beta z} \varphi \left( y \right)
+\end{eqnarray*}
+
+对$\varphi \left( y \right)$：
+
+$\left[ { - \frac{{\hbar ^2 }}{{2m}}\frac{{\partial ^2 }}{{\partial y^2 }} + \frac{{eB\hbar \alpha }}{m}y + \frac{{e^2 B^2 }}{{2m}}y^2 } \right]\varphi \left( y \right) = \left( {E - \frac{{\hbar ^2 }}{{2m}}\left( {\alpha ^2  + \beta ^2 } \right)} \right)\varphi \left( y \right)$
+
+变量变换：$y = y' - \frac{{\hbar \alpha }}{{eB}}$, $\frac{\partial }{{\partial y}} = \frac{\partial }{{\partial y'}}$
+
+\begin{eqnarray*}
+{} &{}& \left[ { - \frac{{\hbar ^2 }}{{2m}}\frac{{\partial ^2 }}{{\partial y'^2 }} + \frac{{e^2 B^2 }}{{2m}}\left( {y' - \frac{{\hbar \alpha }}{{eB}}} \right)^2  + \frac{{eB\hbar \alpha }}{m}\left( {y' - \frac{{\hbar \alpha }}{{eB}}} \right)} \right]\varphi '\left( {y'} \right) \\
+{} &=& \left( {E - \frac{{\hbar ^2 }}{{2m}}\left( {\alpha ^2  + \beta ^2 } \right)} \right)\varphi '\left( {y'} \right)
+\end{eqnarray*}
+
+\begin{eqnarray*}
+{} &{}& \frac{{e^2 B^2 }}{{2m}}\left( {y' - \frac{{\hbar \alpha }}{{eB}}} \right)^2  + \frac{{eB\hbar \alpha }}{m}\left( {y' - \frac{{\hbar \alpha }}{{eB}}} \right) \\
+{} &{=}& \frac{{e^2 B^2 }}{{2m}}\left( {y'^2  - \frac{{2\hbar \alpha }}{{eB}}y' + \left( {\frac{{\hbar \alpha }}{{eB}}} \right)^2 } \right) + \frac{{eB\hbar \alpha }}{m}y' - \frac{{\hbar ^2 \alpha ^2 }}{m}  \\
+{} &{=}&  \frac{{e^2 B^2 }}{{2m}}y'^2  - \frac{{\hbar ^2 \alpha ^2 }}{{2m}} \end{eqnarray*}
+
+所以：
+
+$\left[ { - \frac{{\hbar ^2 }}{{2m}}\frac{{\partial ^2 }}{{\partial y'^2 }} + \frac{{e^2 B^2 }}{{2m}}y'^2  - \frac{{\hbar ^2 \alpha ^2 }}{{2m}}} \right]\varphi '\left( {y'} \right) = \left( {E - \frac{{\hbar ^2 }}{{2m}}\left( {\alpha ^2  + \beta ^2 } \right)} \right)\varphi '\left( {y'} \right)$
+
+即：$\left[ { - \frac{{\hbar ^2 }}{{2m}}\frac{{\partial ^2 }}{{\partial y'^2 }} + \frac{{e^2 B^2 }}{{2m}}y'^2 } \right]\varphi '\left( {y'} \right) = \left( {E - \frac{{\hbar ^2 }}{{2m}}\beta ^2 } \right)\varphi '\left( {y'} \right)$
+
+该方程是是谐振子方程：$\frac{{m\omega ^2 }}{2} = \frac{{e^2 B^2 }}{{2m}}$，$\omega  = \frac{{eB}}{m}$，
+
+\begin{equation}
+E_n \left( \beta  \right) = \frac{{\hbar ^2 }}{{2m}}\beta ^2  + \hbar \omega \left( {n + {\textstyle{1 \over 2}}} \right)
+\end{equation}
+
+这种态称为朗道态，对应能级称为朗道能级。
+
+\subsection*{阅读与思考}
+
+阅读以下文献，并写出读书报告。
+
+\begin{enumerate}
+    \item ``Quantised Singularities in the Electromagnetic Field'', P.A.M. Dirac, \emph{Proceedings of the Royal Society of London}. Series A, Vol. \textbf{133}, Issue \textbf{821}, 60-72 (1931)
+    \item ``Motion of an Electron in the Field of a Magnetic Pole'', H. Chandra, \emph{Physical review}, Vol. \textbf{74}, No.\textbf{8}, 883-887 (1948)
+    \item ``Significance of Electromagnetic Potentials in the Quantum Theory'', Y.Aharonov and D.Bohm, \emph{Physical review}, Vol. \textbf{115}, No.\textbf{3}, 485-491 (1959)
+    \item ``Significance of Potentials in Quantum Theory'', W.H.Furry and N.F.Ramsey, \emph{Physical review}, Vol.\textbf{118}, No.\textbf{3}, 623-626 (1960)
+    \item ``Duality, Spacetime and Quantum Mechanics'', Edward Witten, \emph{Physics Today}, \emph{May}, 28-33 (1997)
+\end{enumerate}
