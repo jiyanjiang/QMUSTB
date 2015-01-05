@@ -1,0 +1,400 @@
+\section{分波法}
+
+\begin{quotation}
+``我们懂得了，学物理不应该只狭窄地学一个专业。学物理应该从平地开始，
+一块砖一块砖地砌，一层一层地加高。我们懂得了，抽象化应在具体的基础工作之后，而绝非在它之前。''\qquad 杨振宁
+\end{quotation}
+
+
+散射也叫碰撞，是研究基本粒子，原子核的主要途径。散射理论也是解释各种输运现象的基础。
+
+\subsection{预备知识}
+
+弹性碰撞（弹性散射）：只有动能的交换，粒子内部状态（能级、自旋等）不改变。否则，称之为非弹性碰撞（非弹性散射）。
+
+\textbf{例1：正电子入射基态氢原子}
+
+\begin{tabular}{|l|l|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  $e^ +   + H \to e^ +   + H$ & 弹性碰撞 \\
+%  \hline
+  $e^ +   + H \to e^ +   + H^* $ & 非弹性碰撞，$H{}^*$表示氢原子的激发态 \\
+%  \hline
+  $e^ +   + H \to e^ +   + e^ -   + p$ & 发应：氢原子电离 \\
+%  \hline
+  $e^ +   + H \to 2\gamma  + p$ & 反应：正负电子湮灭 \\
+%  \hline
+  $e^ +   + H \to p + \left( {e^ +  e^ -  } \right)$ & 反应：重新组合为质子和电子偶素 \\
+  \hline
+ \end{tabular}
+
+
+\textbf{散射截面：}假设入射粒子以稳定的入射流密度$j_i$入射，由于散射中心（靶）的存在，入射粒子将被散射到不同的方向$\left( {\theta ,\varphi } \right)$出射；假设单位时间有$dn$个粒子沿$\left( {\theta ,\varphi } \right)$方向出射：
+
+
+
+\begin{equation}\label{26-1}
+dn = \sigma \left( {\theta ,\varphi } \right)j_i d\Omega
+\end{equation}
+
+$\sigma \left( {\theta ,\varphi } \right) = \frac{1}{{j_i }}\frac{{dn}}{{d\Omega }}$, 具有面积的量刚，称为散射截面\footnote{参考周士勋《量子力学教程》第176页}；表示被散射到$\left( {\theta ,\varphi } \right)$方向的有效面积。
+
+\begin{equation}\label{26-2}
+\sigma _t  = \int {d\Omega \sigma \left( {\theta ,\varphi } \right)}
+\end{equation}
+
+称为总散射截面。
+
+\textbf{平均自由程：}入射粒子入射到具有一定厚度的介质时，假设介质中单位体积存在$\rho$个散射中心（``杂质''体密度），
+入射粒子经过$dx$距离后，将被$\rho Adx$个散射中心散射，总散射截面为：$\sigma _t \rho Adx$。入射粒子发生散射的几率为$P = \frac{{\sigma _t \rho Adx}}{A} = \sigma _t \rho dx$（假设各散射中心互不遮挡）；
+
+假设$n(x)$是粒子入射$x$距离后仍然不被散射的几率，由于在$dx$距离发生碰撞的几率为$\sigma _t \rho dx$，$dn(x) =  - n(x)\sigma _t \rho dx$；解出：$n(x) = n(0)\exp \left( { - \sigma _t \rho x} \right) = n(0)\exp \left( { - {x \mathord{\left/
+ {\vphantom {x \lambda }} \right.
+ \kern-\nulldelimiterspace} \lambda }} \right)$
+
+
+其中：$\lambda  = \frac{1}{{\sigma _t \rho }}$是入射粒子平均自由程。即当$x = \lambda $时，保持原运动状态，而未被散射的粒子是$x=0$时的$\frac{1}{e}$。
+
+
+\subsection{渐近行为}
+
+取散射中心为坐标原点，$V(r)$表示散射中心与入射粒子的相互作用，薛定谔方程：
+
+
+
+\begin{equation}\label{26-3}
+\left[ { - \frac{{\hbar ^2 }}{{2m}}\nabla ^2  + V(r)} \right]\psi  = E\psi
+\end{equation}
+
+入射粒子用平面波表示，$\psi _i  = e^{ikz} $，取入射方向为$z$轴方向；（$p_z  = \hbar k$，$E = \frac{{\hbar ^2 k^2 }}{{2m}}$）
+由于散射中心的存在，入射波函数将发生畸变，在$r \to \infty $时可分为未被散射平面波$e^{ikz} $和被散射球面波$f\left( {\theta ,\varphi } \right)\frac{{e^{ikr} }}{r}$两部分，$f\left( {\theta ,\varphi } \right)$称为散射振幅。
+
+
+如散射中心$V(r)$是中心力场，则角动量守恒；在$V(r)$作用下，波函数在$r \to \infty $时的渐近行为\footnote{入射波函数用$\psi _i  = e^{ikz} $表示时，角动量z分量为0，$l_z  = 0$，即$m = 0$，散射过程中角动量守恒，因此散射波函数$m = 0$，即散射波函数角度部分只与$\theta$有关，与$\varphi$无关，
+因此$f\left( {\theta ,\varphi } \right) = f\left( \theta  \right)$}：
+
+\begin{equation}\label{26-4}
+\mathop {\lim }\limits_{r \to \infty } \psi \left( {r,\theta } \right) \to e^{ikz}  + f\left( \theta  \right)\frac{{e^{ikr} }}{r}
+\end{equation}
+
+入射粒子流密度：$j_i  = \frac{\hbar }{{2im}}\left[ {e^{ - ikz} \left( {{\textstyle{d \over {dz}}}e^{ikz} } \right) - \left( {{\textstyle{d \over {dz}}}e^{ - ikz} } \right)e^{ikz} } \right] = {{\hbar k} \mathord{\left/
+                 {\vphantom {{\hbar k} m}} \right.
+                 \kern-\nulldelimiterspace} m}$
+
+
+被散射粒子流密度：
+$j_s  = \frac{\hbar }{{2im}}\left[ {f^* \left( \theta  \right)\frac{{e^{ - ikr} }}{r}\frac{\partial }{{\partial r}}\left[ {f\left( \theta  \right)\frac{{e^{ikr} }}{r}} \right] - c.c.} \right] = \frac{{\hbar k}}{m}\frac{{\left| {f\left( \theta  \right)} \right|^2 }}{{r^2 }}$
+
+
+利用：$j_s  = j_s r^2 d\Omega $
+
+得到散射截面：
+
+\begin{equation}\label{26-5}
+\sigma \left( {\theta ,\varphi } \right) = \frac{1}{{j_i }}\frac{{dn}}{{d\Omega }} = \left| {f\left( \theta  \right)} \right|^2  = \sigma \left( \theta  \right)
+\end{equation}
+
+
+该式对$\theta = 0$是无意义的，因为在$\theta = 0$方向，
+我们无法把散射波与未散射波（入射波）区分开，
+但我们依然可以将$\theta  \ne 0$时的结果外推到$\theta = 0$时，
+称为向前散射，并与总散射截面存在关系：
+
+\begin{equation}\label{26-6}
+\sigma _t  = \frac{{4\pi }}{k}{\mathop{\rm Im}\nolimits} f\left( 0 \right)
+\end{equation}
+
+公式(\ref{26-6})称为光学定理，光学定理是一个普遍关系。
+
+
+$\sigma \left( \theta  \right)$是实验上可以测量的，
+$f\left( \theta  \right)$可以通过理论计算求得，
+因此我们可以将理论与实验进行比较。
+
+\subsection{中心力场中的弹性散射问题：分波法}
+
+\index{Method of partial waves: 分波法}
+
+中心力场中薛定谔方程：
+
+\begin{eqnarray}
+% \nonumber to remove numbering (before each equation)
+\left[ { - \frac{{\hbar ^2 }}{{2m}}\frac{1}{{r^2 }}\frac{\partial }{{\partial r}}\left( {r^2 \frac{\partial }{{\partial r}}} \right) + \frac{{\widehat L^2 }}{{2mr^2 }} + V(r)} \right]\psi  = E\psi \\
+\widehat L^2  =  - \hbar ^2 \left[ {\frac{1}{{\sin \theta }}\frac{\partial }{{\partial \theta }}\left( {\sin \theta \frac{\partial }{{\partial \theta }}} \right) + \frac{1}{{\sin ^2 \theta }}\frac{{\partial ^2 }}{{\partial \varphi ^2 }}} \right]
+ \end{eqnarray}
+
+对应波函数是$\left( {H,L^2 ,L_z } \right)$的共同本征态；
+
+对于散射问题：$V\left( {r \to \infty } \right) = 0$，因此我们感兴趣的是$E > 0$自由态的情形。
+由于$V(r)$是中心力场，散射过程中角动量守恒，相对于散射中心有不同角动量的粒子，散射后角动量不变，
+即相对于散射中心有不同$\hat L^2$本征值（角量子数）的波函数$\psi$，
+在$V(r)$作用下相互独立地发生散射，散射前后波函数对应相同的$\hat L^2$本征值。
+因此我们可以把入射波函数$\psi_i$用$\left( {H,L^2 ,L_z } \right)$的共同本征态$\psi_{nlm}$进行展开（分波），
+各分波分别散射，可使问题简化，故称为分波法。
+
+
+入射波函数用$\psi _i  = e^{ikz} $表示时，散射波函数角度部分只与$\theta$有关，与$\varphi$无关；
+$\hat L^2$在$m = 0$时对应本征函数为$P_l \left( {\cos \theta } \right)$, 本征值为: $l\left( {l + 1} \right)\hbar ^2 $,
+$l = 0,1,2...$
+
+
+\begin{equation}\label{26-7}
+\psi \left( {r,\theta } \right) = \sum\limits_{l = 0}^\infty  {R_l (r)P_l (\cos \theta )}
+\end{equation}
+
+考虑自由态波函数$E > 0$, 主量子数$n$无意义。我们把波函数分成$l = 0,1,2...$一系列分波，分别称为$s$波，$p$波，$d$波……。
+
+
+径向方程可写为：
+
+\begin{equation}\label{26-8}
+\frac{{d^2 }}{{dr^2 }}R_l  + \frac{2}{r}\frac{{dR_l }}{{dr}} + \left[ {\frac{{2m\left( {E - V(r)} \right)}}{{\hbar ^2 }} - \frac{{l\left( {l + 1} \right)}}{{r^2 }}} \right]R_l  = 0, l = 0,1,2...
+\end{equation}
+
+弹性散射，能量守恒：$E = \frac{{\hbar ^2 k^2 }}{{2m}}$
+
+
+为求解径向方程，引入变换：$R_l (r) = \frac{{\chi _l (r)}}{r}$
+
+
+径向方程简化为：
+
+\begin{equation}\label{26-9}
+\frac{{d^2 }}{{dr^2 }}\chi _l  + \left[ {k^2  - \frac{{2mV(r)}}{{\hbar ^2 }} - \frac{{l\left( {l + 1} \right)}}{{r^2 }}} \right]\chi _l  = 0
+\end{equation}
+
+
+我们需要求$r \to \infty $时的渐近解，
+以与$\mathop {\lim }\limits_{r \to \infty } \psi
+\left( {r,\theta } \right) \to e^{ikz}  + f\left( \theta  \right)\frac{{e^{ikr} }}{r}$
+比较获得$f\left( \theta  \right)$；
+
+
+$r \to \infty $时，$V(r) \to 0$，$\frac{{l\left( {l + 1} \right)}}{{r^2 }} \to 0$，径向方程化为：
+
+\begin{equation}\label{26-10}
+\frac{{d^2 }}{{dr^2 }}\chi _l  + k^2 \chi _l  = 0
+\end{equation}
+
+它的解是：$\chi _l (r) \to A_l^ +  e^{ikr}  + A_l^ -  e^{ - ikr}  = A'_l \sin \left( {kr + \delta '_l } \right)$
+
+
+$r \to \infty $时，$R_l (r) \to \frac{{A'_l \sin \left( {kr + \delta '_l } \right)}}{r}$
+
+
+为讨论方便，定义：$A_l  = kA'_l $, $\delta _l  = \delta '_l  + \frac{l}{2}\pi $
+
+
+$R_l (r) \to \frac{{A_l \sin \left( {kr - {\textstyle{l \over 2}}\pi  + \delta _l } \right)}}{{kr}}$
+
+$\mathop {\lim }\limits_{r \to \infty } \psi \left( {r,\theta } \right) \to \sum\limits_{l = 0}^\infty  {\frac{{A_l }}{{kr}}\sin \left( {kr - {\textstyle{l \over 2}}\pi  + \delta _l } \right)P_l (\cos \theta )} $
+
+将此式与$\mathop {\lim }\limits_{r \to \infty } \psi \left( {r,\theta } \right) \to e^{ikz}  + f\left( \theta  \right)\frac{{e^{ikr} }}{r}$
+比较就可获得$f\left( \theta  \right)$;
+
+
+为此，我们需将$e^{ikz} $按$P_l \left( {\cos \theta } \right)$进行展开：
+
+
+\begin{equation}\label{26-11}
+e^{ikz}  = e^{ikr\cos \theta }  = \sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)i^l j_l \left( {kr} \right)P_l \left( {\cos \theta } \right)}
+\end{equation}
+
+其中$j_l \left( {kr} \right)$是球贝塞尔函数；它的渐近表示式为
+
+$j_l \left( {kr} \right) = \mathop {\lim }\limits_{r \to \infty } \sqrt {\frac{\pi }{{2kr}}} J_{l + {\textstyle{1 \over 2}}} \left( {kr} \right) \to \frac{1}{{kr}}\sin \left( {kr - {\textstyle{l \over 2}}\pi } \right)$
+
+
+两种渐近表示应在$r \to \infty $时相等，即：
+
+$\sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)i^l \frac{1}{{kr}}\sin \left( {kr - {\textstyle{l \over 2}}\pi } \right)P_l \left( {\cos \theta } \right)}  + \frac{{f\left( \theta  \right)}}{r}e^{ikr}  = \sum\limits_{l = 0}^\infty  {\frac{{A_l }}{{kr}}\sin \left( {kr - {\textstyle{l \over 2}}\pi  + \delta _l } \right)P_l (\cos \theta )} $
+
+
+利用：$\sin \alpha  = \frac{1}{{2i}}\left( {e^{i\alpha }  - e^{ - i\alpha } } \right)$
+
+
+$\begin{array}{l}
+ \sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)i^{l - 1} \frac{1}{{2kr}}\left[ {e^{i\left( {kr - {\textstyle{l \over 2}}\pi } \right)}  - e^{ - i\left( {kr - {\textstyle{l \over 2}}\pi } \right)} } \right]P_l \left( {\cos \theta } \right)}  + \frac{{f\left( \theta  \right)}}{r}e^{ikr}  \\
+  = \sum\limits_{l = 0}^\infty  {\frac{{A_l }}{{kr}}\frac{1}{{2i}}\left[ {e^{i\left( {kr - {\textstyle{l \over 2}}\pi  + \delta _l } \right)}  - e^{ - i\left( {kr - {\textstyle{l \over 2}}\pi  + \delta _l } \right)} } \right]P_l (\cos \theta )}  \\
+ \end{array}$
+
+
+
+
+
+得到：
+
+$\begin{array}{l}
+ \left[ {\frac{{f\left( \theta  \right)}}{r} + \sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)i^{l - 1} \frac{{e^{ - i{\textstyle{l \over 2}}\pi } }}{{2kr}}P_l \left( {\cos \theta } \right)} } \right]e^{ikr}  - \left[ {\sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)i^{l - 1} \frac{{e^{i{\textstyle{l \over 2}}\pi } }}{{2kr}}P_l \left( {\cos \theta } \right)} } \right]e^{ - ikr}  \\
+  = \left[ {\sum\limits_{l = 0}^\infty  {\frac{{A_l }}{{kr}}\frac{{e^{i\left( {\delta _l  - {\textstyle{l \over 2}}\pi } \right)} }}{{2i}}P_l (\cos \theta )} } \right]e^{ikr}  - \left[ {\sum\limits_{l = 0}^\infty  {\frac{{A_l }}{{kr}}\frac{{e^{ - i\left( {\delta _l  - {\textstyle{l \over 2}}\pi } \right)} }}{{2i}}P_l (\cos \theta )} } \right]e^{ - ikr}  \\
+ \end{array}$
+
+
+两边乘以$2ikr$：
+
+$\begin{array}{l}
+ \left[ {2kif\left( \theta  \right) + \sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)i^l e^{ - i{\textstyle{l \over 2}}\pi } P_l \left( {\cos \theta } \right)} } \right]e^{ikr}  - \left[ {\sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)i^l e^{i{\textstyle{l \over 2}}\pi } P_l \left( {\cos \theta } \right)} } \right]e^{ - ikr}  \\
+  = \left[ {\sum\limits_{l = 0}^\infty  {A_l e^{i\left( {\delta _l  - {\textstyle{l \over 2}}\pi } \right)} P_l (\cos \theta )} } \right]e^{ikr}  - \left[ {\sum\limits_{l = 0}^\infty  {A_l e^{ - i\left( {\delta _l  - {\textstyle{l \over 2}}\pi } \right)} P_l (\cos \theta )} } \right]e^{ - ikr}  \\
+ \end{array}$
+
+
+因此：
+
+$\left\{ \begin{array}{l}
+ 2kif\left( \theta  \right) + \sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)i^l e^{ - i{\textstyle{l \over 2}}\pi } P_l \left( {\cos \theta } \right)}  = \sum\limits_{l = 0}^\infty  {A_l e^{i\left( {\delta _l  - {\textstyle{l \over 2}}\pi } \right)} P_l (\cos \theta )}  \\
+ \sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)i^l e^{i{\textstyle{l \over 2}}\pi } P_l \left( {\cos \theta } \right)}  = \sum\limits_{l = 0}^\infty  {A_l e^{ - i\left( {\delta _l  - {\textstyle{l \over 2}}\pi } \right)} P_l (\cos \theta )}  \\
+ \end{array} \right.$
+
+
+利用勒让德多项式的正交性：
+$\int_0^\pi  {P_l \left( {\cos \theta } \right)P_{l'} \left( {\cos \theta } \right)} \sin \theta d\theta  = \frac{2}{{2l + 1}}\delta _{ll'} $
+
+
+由：$\sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)i^l e^{i{\textstyle{l \over 2}}\pi } P_l \left( {\cos \theta } \right)}  = \sum\limits_{l = 0}^\infty  {A_l e^{ - i\left( {\delta _l  - {\textstyle{l \over 2}}\pi } \right)} P_l (\cos \theta )} $
+
+
+得到：$A_l  = \left( {2l + 1} \right)i^l e^{i\delta _l } $；并利用：$i^l  = e^{i{\textstyle{l \over 2}}\pi } $
+
+
+$\begin{array}{l}
+ 2kif\left( \theta  \right) = \sum\limits_{l = 0}^\infty  {\left[ {\left( {2l + 1} \right)\left( {e^{i2\delta _l }  - 1} \right)} \right]P_l (\cos \theta )}  \\ =  \sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)\left( {\cos 2\delta _l  + i\sin 2\delta _l  - 1} \right)P_l (\cos \theta )}  \\
+  = \sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)\left( {1 - 2\sin ^2 \delta _l  + 2i\sin \delta _l \cos \delta _l  - 1} \right)P_l (\cos \theta )}  \\
+  = \sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)\left[ {2i\sin \delta _l \left( {\cos \delta _l  + i\sin \delta _l } \right)} \right]P_l (\cos \theta )}  \\
+  = \sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)P_l (\cos \theta )2ie^{i\delta _l } \sin \delta _l }  \\
+ \end{array}$
+
+
+所以：
+
+
+\begin{equation}\label{26-12}
+f\left( \theta  \right) = \frac{1}{k}\sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)P_l (\cos \theta )e^{i\delta _l } \sin \delta _l }
+\end{equation}
+
+
+可见散射振幅$f(\theta)$的求解归结为各分波相移$\delta_l$的求解.
+
+
+
+散射截面：$\sigma \left( \theta  \right) = \left| {f\left( \theta  \right)} \right|^2 $
+
+
+
+总散射截面：
+
+$\sigma _t  = 2\pi \int_0^\pi  {d\theta \sin \theta \left| {f\left( \theta  \right)} \right|^2 }  = ... = \frac{{4\pi }}{{k^2 }}\sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)\sin ^2 \delta _l }  = \sum\limits_{l = 0}^\infty  {\sigma _l } $
+
+
+
+其中：$\sigma _l  = \frac{{4\pi }}{{k^2 }}\left( {2l + 1} \right)\sin ^2 \delta _l $
+是第$l$个分波的散射截面。
+
+
+
+当$\theta = 0$时，向前散射：
+
+
+
+
+$f\left( 0 \right) = \frac{1}{k}\sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)P_l (1)e^{i\delta _l } \sin \delta _l }  = \frac{1}{k}\sum\limits_{l = 0}^\infty  {\left( {2l + 1} \right)\left( {\sin \delta _l \cos \delta _l  + i\sin ^2 \delta _l } \right)}$
+
+
+因此验证了光学定理：$\sigma _t  = \frac{{4\pi }}{k}{\mathop{\rm Im}\nolimits} f\left( 0 \right)$
+
+
+分波法适用范围：原则上分波法是处理散射问题的普遍方法,
+但只有随$l$增加，级数求和$\sigma _t  = \sum\limits_{l = 0}^\infty
+{\sigma _l }
+$收敛快的情形才有意义。分波法在低能散射情况下最为适用\footnote{参考周士勋《量子力学教程》
+第183页}。
+
+
+\subsection{低能粒子受球方势阱/垒散射}
+
+
+\begin{equation}\label{26-13}
+V(r) = \left\{ \begin{array}{l}
+ V_0 ,r \le a \\
+ 0,r > a \\
+ \end{array} \right.
+\end{equation}
+
+
+在势阱情况下$V_0  =  - \left| {V_0 } \right| < 0$，低能情形$ka \ll 1$，只考虑$s$波（$l=0$）。
+
+径向方程：$\frac{{d^2 }}{{dr^2 }}\chi  + \left[ {k^2  - V(r)} \right]\chi  = 0$, 即：
+
+
+\begin{center}
+$\left\{ \begin{array}{l}
+ \frac{{d^2 }}{{dr^2 }}\chi  + k'^2 \chi  = 0,r \le a \\
+ \frac{{d^2 }}{{dr^2 }}\chi  + k^2 \chi  = 0,r > a \\
+ \end{array} \right.$
+\end{center}
+
+
+
+这里：$k'^2  = k^2  + \frac{{2m\left| {V_0 } \right|}}{{\hbar ^2 }}$
+
+
+利用边界条件$\chi (r = 0) = 0$, 解出：
+
+
+\begin{center}
+$\left\{ \begin{array}{l}
+ \chi (r) = A\sin k'r,r \le a \\
+ \chi (r) = B\sin \left( {kr + \delta _0 } \right),r > a \\
+ \end{array} \right.$
+\end{center}
+
+利用$r=a$时，连续性条件：
+
+\begin{eqnarray*}
+\left\{ \begin{array}{l}
+ A\sin k'a = B\sin \left( {ka + \delta _0 } \right) \\
+ Ak'\cos k'a = Bk\cos \left( {ka + \delta _0 } \right) \\
+ \end{array} \right.
+ \end{eqnarray*}
+
+解出：$\frac{1}{{k'}}\tan k'a = \frac{1}{k}\tan \left( {ka + \delta _0 } \right)$
+
+
+相移：$\delta _0  = \arctan \left[ {\frac{k}{{k'}}\tan k'a} \right] - ka$
+
+
+利用低能近似条件：$k \to 0$，
+
+\begin{center}
+$\sin \delta _0  \approx \tan \delta _0  \approx \delta _0  \approx \frac{k}{{k'}}\tan k'a - ka$
+\end{center}
+
+
+利用：$k'^2  = k^2  + \frac{{2m\left| {V_0 } \right|}}{{\hbar ^2 }}$，$k' \approx \frac{{\sqrt {2m\left| {V_0 } \right|} }}{\hbar } = k_0 $
+
+
+\begin{eqnarray*}
+\sin \delta _0  \approx \delta _0  \approx \frac{k}{{k'}}\tan k'a - ka \approx ka\left[ {\frac{{\tan k_0 a}}{{k_0 a}} - 1} \right]
+ \end{eqnarray*}
+
+\begin{center}
+$\sigma _0  = \frac{{4\pi }}{{k^2 }}\sin ^2 \delta _0  = 4\pi a^2 \left( {\frac{{\tan k_0 a}}{{k_0 a}} - 1} \right)^2$
+\end{center}
+
+
+类似地对势垒：$V_0  = \left| {V_0 } \right| > 0$，$k_0  = i\frac{{\sqrt {2m\left| {V_0 } \right|} }}{\hbar } = i\left| {k_0 } \right|$
+
+$\tan i\left| {k_0 } \right|a = i\frac{{e^{\left| {k_0 } \right|a}  - e^{ - \left| {k_0 } \right|a} }}{{e^{\left| {k_0 } \right|a}  + e^{ - \left| {k_0 } \right|a} }} = i\tanh \left| {k_0 } \right|a$
+
+
+$\sigma _0  = \frac{{4\pi }}{{k^2 }}\sin ^2 \delta _0  = 4\pi a^2 \left( {\frac{{\tanh \left| {k_0 } \right|a}}{{\left| {k_0 } \right|a}} - 1} \right)^2 $
+
+
+
+对于刚球散射\footnote{刚球散射经典情形，总散射截面$\sigma _t  = \pi a^2 $}：$V_0  \to \infty $，$\left| {k_0 } \right|a \to \infty $，$\tanh \left| {k_0 } \right|a \to 1$
+
+所以：
+
+\begin{center}
+$\sigma _0  = \frac{{4\pi }}{{k^2 }}\sin ^2 \delta _0  = 4\pi a^2 \left( {\frac{{\tanh \left| {k_0 } \right|a}}{{\left| {k_0 } \right|a}} - 1} \right)^2  \to 4\pi a^2$
+\end{center}
