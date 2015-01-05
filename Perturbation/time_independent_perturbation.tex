@@ -1,0 +1,827 @@
+\section{定态微扰理论}
+
+\begin{quotation}
+``那有比行星摄动更复杂；那有比牛顿定律更简明呢？''\qquad 彭加勒
+\end{quotation}
+
+对实际的量子力学问题而言, 可解的或存在解析解(严格解)的情形是很少的,
+这时候我们就需要``近似求解''. 近似对物理学来说并非是``不好''的,
+在某种意义上说``近似方法''正是物理学的精髓所在.
+
+我们把哈密顿量在形式上分成两部分, $H_0$,
+是我们已知的或存在解析解的量子力学问题, $H'$是相互作用.
+
+\begin{equation}\label{Full Hamiltonian}
+H = H_0 + H'
+\end{equation}
+
+微扰论是基于这样一种朴素的思想:
+``\textbf{小的相互作用将导致小的修正}''。
+
+但这句话的语义是含混的, 比如: ``什么是小的相互作用？''
+``这个小又是针对谁而言的？''
+
+假设我们现在考虑的$H$不含时, $H_0$的本征值问题是已知的,
+即存在$\{E_n\}$, $\{\psi_n\}$, 使得:
+
+\begin{equation}\label{original eigenvalue problem H0}
+H_0 \psi_n = E_n \psi_n
+\end{equation}
+
+这里的$E_n$是个能级结构, 对每个$n$而言, 可能存在简并,
+也可能不存在简并.
+
+指标$n$不容忽视, 它(们)是用来标记量子态的, 如果不同量子态,
+$\psi_n$与$\psi_{n'}$, 对应相同能量, 那么就存在``简并''(degenerate)\index{Degenerate: 简并},
+如果是一一对应的, 一个量子态对应一个能量,
+就是``非简并''(non-degenerate)的.
+
+严格来说$H\psi=E\psi$与$H_0\psi=E\psi$是两个不同的本征值问题,
+有$H'$和无$H'$可能会导致能级结构的``本质性''改变.
+
+基于以上这些考虑, 我们可以给出微扰论适用的条件, $H'$的存在与否,
+不``本质''地改变能级结构$\{E_n\}$,
+不影响我们去追踪每一个能量本征值$E_n$, 这意味着:
+
+\begin{enumerate}
+  \item 用来标记量子态的指标$n$仍然适用;
+  \item 对每一组$E_n$, $\psi_n$, 我们都可以连续地追踪它们的变化.
+  \item 小的$H'$将导致能量本征值$E$的有限改变,
+  换句话说考虑$H'$对$E$的修正应当是快速收敛的,
+  即我们只需考虑最低阶的几项修正(一般考虑到二阶)就可得到比较精确的结果.
+\end{enumerate}
+
+\subsection{双态系统}
+
+作为一个简单的例子, 我们首先来研究一个``非简并''的双态系统:
+
+\begin{equation}\label{Non-degenerate two state system}
+H = H_0 + H' = \left( {\begin{array}{*{20}c}
+   E_1^{(0)} & 0  \\
+   0 & E_2^{(0)}  \\
+ \end{array} } \right)
++ \left( {\begin{array}{*{20}c}
+   0 & \Delta  \\
+   \Delta & 0  \\
+ \end{array} } \right)
+\end{equation}
+
+我们要求解的是关于$H$的本征值问题:
+
+\begin{equation*}
+\left( {\begin{array}{*{20}c}
+   E_1^{(0)} & \Delta  \\
+   \Delta & E_2^{(0)}  \\
+ \end{array} } \right)
+\left( {\begin{array}{*{20}c}
+   a  \\
+   b  \\
+ \end{array} } \right)
+= E \left( {\begin{array}{*{20}c}
+   a  \\
+   b  \\
+ \end{array} } \right)
+\end{equation*}
+
+有非零解的条件是:
+
+\begin{equation*}
+\det \left| {\begin{array}{*{20}c}
+   E_1^{(0)}-E & \Delta  \\
+   \Delta & E_2^{(0)}-E  \\
+ \end{array} } \right|
+= 0
+\end{equation*}
+
+上式是关于$E$的一元二次方程(quadratic equation of one
+variable)\footnote{对$ax^2 + bx +c=0$, 其解为:
+
+\begin{equation*}
+x_{1,2}=\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{equation*}
+}, 可解出两个$E$:
+
+\begin{equation}\label{quadratic solution for E}
+E_{1,2}=\frac{E_1^{(0)}+E_2^{(0)}}{2} \pm \sqrt{\frac{\left(
+E_1^{(0)}-E_2^{(0)} \right)^2}{4} +\Delta^2}
+\end{equation}
+
+现在假设$E_1^{(0)} > E_1^{(0)}$, 并且$E_1^{(0)}-E_2^{(0)} \gg
+\Delta$, 在此意义下$H'$是微扰. 上式可重新改写为:
+
+\begin{equation*}
+E_{1,2}=\frac{E_1^{(0)}+E_2^{(0)}}{2} \pm
+\frac{E_1^{(0)}-E_2^{(0)}}{2}
+\sqrt{1+\frac{4\Delta^2}{\left(E_1^{(0)}-E_2^{(0)} \right)^2} }
+\end{equation*}
+
+这里$\varepsilon = \frac{4\Delta^2}{\left(E_1^{(0)}-E_2^{(0)}
+\right)^2}$是小量. 按照小量展开的级数形式:
+
+\begin{equation*}
+\sqrt{1+\varepsilon} = 1 + \frac{1}{2}\varepsilon + ...
+\end{equation*}
+
+我们可解出:
+
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+E_1 &=& E_1^{(0)}+ \frac{\Delta^2}{E_1^{(0)}-E_2^{(0)}} +... \\
+E_2 &=& E_2^{(0)}- \frac{\Delta^2}{E_1^{(0)}-E_2^{(0)}} +...
+\end{eqnarray*}
+
+第二个式子可重新改写为:
+
+\begin{equation*}
+E_2 = E_2^{(0)} + \frac{\Delta^2}{E_2^{(0)}-E_1^{(0)}} +...
+\end{equation*}
+
+以上解都是展开到$H'$的平方项(即: $\Delta^2$),
+在此意义下我们得到的是二阶微扰的结果.
+
+
+由此, 我们可以猜测二阶微扰对能量修正的一般结果是：
+
+
+\begin{equation}\label{Energy for 2nd order perturbation}
+E_n^{(2)}=E_n^{(0)} + H'_{nn} + \sum\limits_{m \ne n}
+\frac{\left|H'_{mn} \right|^2}{E_n^{(0)}-E_m^{(0)}}
+\end{equation}
+
+上式(\ref{Energy for 2nd order
+perturbation})右侧第一项是能量的0阶近似, 第二项是1阶近似,
+第三项是2阶近似, 第三项中的求和是对所有$m \ne n$态的求和.
+
+与之对应的是波函数的1阶近似,
+
+\begin{equation}\label{wave function for 1st order perturbation}
+\psi_n^{(1)} = \psi_n^{(0)} + \sum\limits_{m \ne n} \frac{ H'_{mn}
+\psi_m^{(0)}}{E_n^{(0)}-E_m^{(0)}}
+\end{equation}
+
+忽略2阶贡献($H'^2$有关的项), 我们可证明, 上式是归一的, 即：
+
+
+\begin{equation*}
+\left\langle \psi_n^{(1)} | \psi_n^{(1)} \right\rangle = 1 + O(H'^2)
+=1
+\end{equation*}
+
+再者, 公式(\ref{Energy for 2nd order perturbation})(\ref{wave
+function for 1st order perturbation})应满足:
+
+
+\begin{equation*}
+\left( H_0 + H' \right) \psi_n^{(1)} = E_n^{(2)}\psi_n^{(1)}
+\end{equation*}
+
+
+即所谓波函数的一阶近似对应的是能量的二阶近似.
+我们把一阶波函数(\ref{wave function for 1st order
+perturbation})代入上式:
+
+\begin{equation*}
+\left( H_0 + H' \right) \left( \psi_n^{(0)} + \sum\limits_{m \ne n}
+\frac{ H'_{mn} \psi_m^{(0)}}{E_n^{(0)}-E_m^{(0)}} \right) =
+E_n^{(2)}\left( \psi_n^{(0)} + \sum\limits_{m \ne n} \frac{ H'_{mn}
+\psi_m^{(0)}}{E_n^{(0)}-E_m^{(0)}} \right)
+\end{equation*}
+
+对等式左右分别左乘$\psi_n^{(0)*}$并积分. 写成狄拉克记号的形式,
+
+左侧是: $\left\langle n^{(0)} \right| H_0 + H' \left(
+\left|n^{(0)}\right\rangle + \sum\limits_{m \ne n}
+\frac{\left|m^{(0)}\right\rangle H'_{mn} }{E_n^{(0)} - E_m^{(0)}}
+\right) =E_n^{(0)} + H'_{nn} + \sum\limits_{m \ne n}
+\frac{H'_{nm}H'_{mn}}{E_n^{(0)}-E_m^{(0)}}$, 右侧是: $E_n^{(2)}$.
+
+即我们由波函数的1阶近似(\ref{wave function for 1st order
+perturbation})得到了能量的2阶近似(\ref{Energy for 2nd order
+perturbation}).
+
+\subsection{非简并定态微扰论}
+
+假设微扰哈密顿量具有如下形式：
+
+\begin{equation}\label{22-1}
+H = H_0  + \lambda W
+\end{equation}
+
+$H_0$是未微扰系统哈密顿，$\lambda W$是微扰哈密顿，必须很小，不足以本质地改变系统的能量本征值和本征函数；$\lambda$ 是很小实参数，波函数与能量本征值都可按$\lambda$的幂级数进行展开，称为微扰参数。
+
+假设哈密顿算符$H$不显含时间，未微扰哈密顿$H_0$的能量本征值$E_n ^0$与本征函数$\psi _n^0 $已知：
+
+\index{Nondegenerate: 非简并}
+
+\index{Time-independent perturbation: 定态微扰}
+
+\begin{equation}\label{22-2}
+H_0 \psi _n^0  = E_n^0 \psi _n^0
+\end{equation}
+
+
+总哈密顿服从的薛定谔方程：$\widehat H\psi  = E\psi $，即：
+
+\begin{equation}\label{22-3}
+\left( {\widehat H_0  + \lambda \widehat W} \right)\psi  = E\psi
+\end{equation}
+
+微扰后波函数可按已知本征函数系$\left\{ {\psi _n^0 } \right\}$展开：$\psi  = \sum\limits_n {a_n \psi _n^0 } $
+
+
+\begin{equation}\label{22-4}
+\sum\limits_n {a_n \left( {E_n^0  - E + \lambda \widehat W} \right)\psi _n^0 }  = 0
+\end{equation}
+
+左右两边同时左乘$\psi _m^{0*} $，并积分；利用正交归一关系：$\left\langle {{\psi _m^0 }}
+ \mathrel{\left | {\vphantom {{\psi _m^0 } {\psi _n^0 }}}
+ \right. \kern-\nulldelimiterspace}
+ {{\psi _n^0 }} \right\rangle  = \delta _{mn} $
+
+
+\begin{equation}\label{22-4a}
+\sum\limits_n {a_n \left[ {\left( {E_n^0  - E} \right)\delta _{mn}  + \lambda W_{mn} } \right] = 0}
+\end{equation}
+
+矩阵元：$W_{mn}  = \left\langle {\psi _m^0 } \right|\widehat W\left| {\psi _n^0 } \right\rangle $
+
+方程\ref{22-4a}可改写为：
+
+\begin{equation}\label{22-5}
+a_m \left( {E_m^0  - E + \lambda W_{mm} } \right) + \lambda \sum\limits_{n \ne m} {a_n W_{mn} }  = 0
+\end{equation}
+
+可见，如果微扰参数$\lambda  \ne 0$，$\psi$中可能包含$n \ne m$的态；
+
+将波函数（即基矢$\psi _n^0 $的系数$a_n$），能量本征值按$\lambda$的幂级数展开并代入薛定谔方程：
+
+
+\begin{equation}\label{22-6}
+\left\{ \begin{array}{l}
+ a_m  = a_m^{(0)}  + \lambda a_m^{(1)}  + \lambda ^2 a_m^{(2)}  + ... \\
+ E = E^{(0)}  + \lambda E^{(1)}  + \lambda ^2 E^{(2)}  + ... \\
+ \end{array} \right.
+\end{equation}
+
+\begin{equation}\label{22-7}
+\begin{array}{l}
+ \left( {a_m^{(0)}  + \lambda a_m^{(1)}  + \lambda ^2 a_m^{(2)}  + ...} \right)\left( {E_m^0  - E^{(0)}  - \lambda E^{(1)}  - \lambda ^2 E^{(2)}  - ... + \lambda W_{mm} } \right) +  \\
+ \lambda \sum\limits_{n \ne m} {\left( {a_n^{(0)}  + \lambda a_n^{(1)}  + \lambda ^2 a_n^{(2)}  + ...} \right)W_{mn} }  = 0 \\
+ \end{array}
+\end{equation}
+
+$\lambda ^0$次幂：
+
+\begin{equation*}
+\left( {E_m^0  - E^{(0)} } \right)a_m^{(0)}  = 0
+\end{equation*}
+
+$\lambda ^1$次幂：
+
+\begin{equation*}
+ {\left( {W_{mm}  - E^{(1)} } \right)a_m^{(0)}  + \left( {E_m^0  - E^{(0)} } \right)a_m^{(1)}  + \sum\limits_{n \ne m} {W_{mn} a_n^{(0)} } }  = 0
+\end{equation*}
+
+$\lambda ^2$次幂：
+
+\begin{equation*}
+{\left( {W_{mm}  - E^{(1)} } \right)a_m^{(1)}  + \left( {E_m^0  - E^{(0)} } \right)a_m^{(2)}  + \sum\limits_{n \ne m} {W_{mn} a_n^{(1)}  - E^{(2)} a_m^0 } }  = 0 
+\end{equation*}
+
+......
+
+薛定谔方程化为：
+
+\begin{equation}\label{22-8}
+\left( {E_m^0  - E^{(0)} } \right)a_m^{(0)}  + \lambda \left[ ... \right]  + \lambda ^2 \left[ ...  \right] + ... = 0 
+\end{equation}
+
+\textbf{零级近似：}只考虑到$\lambda ^0 $次幂对薛定谔方程求解；
+
+$\left( {E_m^0  - E^{(0)} } \right)a_m^{(0)}  = 0$, $m = 1,2,3,...$选取其中某一能级$m = k$,
+
+$E^{(0)}  = E_k^0 $, $a_m^{(0)}  = \delta _{mk} $, 所以零级近似下波函数不存在混合，对应的就是未微扰时的波函数和能量本征值：$E_n^0 $，$\psi _n^0 $；
+
+\textbf{一级近似：}利用零级近似的结果，并对薛定谔方程考虑到$\lambda ^1 $次幂求解；
+
+
+\begin{equation}\label{22-9}
+\begin{array}{c}
+\left( {E_m^0  - E_k^0 } \right)\delta _{mk}  + \\
+\lambda \left[ {\left( {W_{mm}  - E^{(1)} } \right)\delta _{mk}  + \left( {E_m^0  - E_k^0 } \right)a_m^{(1)}  + \sum\limits_{n \ne m} {W_{mn} \delta _{nk} } } \right] = 0 \\
+\end{array}
+\end{equation}
+
+当$m = k$时，$\left( {W_{mm}  - E^{(1)} } \right) = 0$, $\Rightarrow$
+$E^{(1)}  = W_{kk} $，是能量的一级修正；
+
+当$m \ne k$时，$\left( {E_m^0  - E_k^0 } \right)a_m^{(1)}  + W_{mk}  = 0$，如果能级不简并：$E_m^0  - E_k^0  \ne 0$
+
+波函数展开系数的一级修正：
+
+\begin{equation}
+a_m^{(1)}  = \frac{{W_{mk} }}{{E_k^0  - E_m^0 }}, m \ne k
+\end{equation}
+
+对于$m = k$时波函数展开系数的一级修正：$a_k^1 $可通过波函数的正交归一条件求得；
+在一级微扰近似下，波函数表示为：
+
+\begin{center}
+$\psi _k  = \sum\limits_n {a_n \psi _n^0 }  = \sum\limits_n {\left( {a_n^0  + \lambda a_n^1 } \right)\psi _n^0 }  = \psi _k^0  + \lambda a_k^1 \psi _k^0  + \lambda \sum\limits_{n \ne k} {a_n^1 \psi _n^0 } $
+\end{center}
+
+正交归一：
+
+\begin{center}
+$\left\langle {{\psi _k }}
+ \mathrel{\left | {\vphantom {{\psi _k } {\psi _k }}}
+ \right. \kern-\nulldelimiterspace}
+ {{\psi _k }} \right\rangle  = \left\langle {{\psi _k^0 }}
+ \mathrel{\left | {\vphantom {{\psi _k^0 } {\psi _k^0 }}}
+ \right. \kern-\nulldelimiterspace}
+ {{\psi _k^0 }} \right\rangle  + \lambda \left\langle {\psi _k^0 } \right|a_k^1 \left| {\psi _k^0 } \right\rangle  + \lambda \left\langle {\psi _k^0 } \right|a_k^{1*} \left| {\psi _k^0 } \right\rangle  + O\left( {\lambda ^2 } \right) = 1 + \lambda \left( {a_k^1  + a_k^{1*} } \right) = 1$
+\end{center}
+
+上式中，我们已略去$\lambda$的二阶小量$O\left( {\lambda ^2 } \right)$，并且：$a_k^1  + a_k^{1*}  = 0$，即：$a_k^1 $是纯虚数；因此可令：$a_k^1  = i\gamma ,\gamma  \in {\rm{Real}}$，由于$\lambda$是小量，将波函数展开到$\lambda$的一阶小量：
+
+$\psi _k  = \psi _k^0  + i\gamma \lambda \psi _k^0  + \lambda \sum\limits_{n \ne k} {a_n^1 } \psi _n^0  + O\left( {\lambda ^2 } \right) = e^{i\gamma \lambda } \psi _k^0  + \lambda \sum\limits_{n \ne k} {a_n^1 } \psi _n^0  + O\left( {\lambda ^2 } \right) = e^{i\gamma \lambda } \left( {\psi _k^0  + \lambda \sum\limits_{n \ne k} {a_n^1 } \psi _n^0 } \right) + O\left( {\lambda ^2 } \right)$
+
+在波函数的一级近似中我们可取：$a_k^1  = 0$，与考虑$a_k^1  \ne 0$只相差一个相因子，而不影响计算结果。
+
+波函数一级近似：
+
+
+\begin{equation}\label{22-10}
+\psi _k  = \psi _k^0  + \lambda \sum\limits_{n \ne k} {\frac{{W_{nk} }}{{E_k^0  - E_n^0 }}\psi _n^0 }
+\end{equation}
+
+
+能量本征值一级近似：
+
+
+\begin{equation}\label{22-11}
+E_k  = E_k^0  + \lambda W_{kk}
+\end{equation}
+
+
+\textbf{二级近似：}利用一级近似的结果，并对薛定谔方程考虑到$\lambda ^2 $次幂求解；
+
+$\sum\limits_{n \ne k} {W_{kn} a_n^{(1)}  - E_k^{(2)} \delta _{mk} }  = 0$
+$ \Rightarrow $
+能量本征值的二级修正：
+
+\begin{equation}\label{22-12}
+E_k^{(2)}  = \sum\limits_{n \ne k} {W_{kn} a_n^{(1)} }  = \sum\limits_{n \ne k} {\frac{{W_{kn} W_{nk} }}{{E_k^0  - E_n^0 }}}
+\end{equation}
+
+波函数展开系数的二级修正：
+
+\begin{equation*}
+ {\left( {W_{mm}  - E^{(1)} } \right)a_m^{(1)}  + \left( {E_m^0  - E^{(0)} } \right)a_m^{(2)}  + \sum\limits_{n \ne m} {W_{mn} a_n^{(1)}  - E^{(2)} a_m^0 } }  = 0
+\end{equation*}
+
+
+$\Rightarrow$
+$\left( {W_{mm}  - W_{kk} } \right)a_m^{(1)}  + \left( {E_m^0  - E_k^0 } \right)a_m^{(2)}  + \sum\limits_{n \ne m} {W_{mn} a_n^{(1)} }  - E_k^{(2)} \delta _{mk}  = 0$, $m \ne k$时：
+
+$\Rightarrow$
+$a_m^{(2)}  =  - \frac{{\left( {W_{mm}  - W_{kk} } \right)}}{{\left( {E_m^0  - E_k^0 } \right)}}a_m^{(1)}  - \sum\limits_{n \ne m} {\frac{{W_{mn} }}{{\left( {E_m^0  - E_k^0 } \right)}}a_n^{(1)} }  = \frac{{W_{kk} }}{{\left( {E_m^0  - E_k^0 } \right)}}a_m^{(1)}  - \sum\limits_n {\frac{{W_{mn} }}{{\left( {E_m^0  - E_k^0 } \right)}}} a_n^{(1)} $
+
+利用：$a_m^{(1)}  = \frac{{W_{mk} }}{{E_k^0  - E_m^0 }}$, $\Rightarrow$
+$a_m^{(2)}  =  - \frac{{W_{mk} W_{kk} }}{{\left( {E_k^0  - E_m^0 } \right)^2 }} + \sum\limits_n {\frac{{W_{mn} W_{nk} }}{{\left( {E_k^0  - E_m^0 } \right)\left( {E_k^0  - E_n^0 } \right)}}} $, $m,n \ne k$
+
+
+波函数二级近似\footnote{参考曾谨言《量子力学 卷I》第499页}：
+
+\begin{equation}\label{22-13}
+\begin{array}{c}
+ \psi _k  = \psi _k^{(0)}  + \sum\limits_{n \ne k} {\frac{{\lambda W_{nk} }}{{\left( {E_k^{(0)}  - E_n^{(0)} } \right)}}\psi _n^{(0)} }  + \\
+  \sum\limits_{m \ne k} {\left\{ {\sum\limits_{n \ne k} {\frac{{\lambda ^2 W_{mn} W_{nk} }}{{\left( {E_k^{(0)}  - E_m^{(0)} } \right)\left( {E_k^{(0)}  - E_n^{(0)} } \right)}} - \frac{{\lambda ^2 W_{mk} W_{kk} }}{{\left( {E_k^{(0)}  - E_m^{(0)} } \right)^2 }}} } \right\}} \psi _m^{(0)}  \\
+ - \frac{1}{2}\left[ {\sum\limits_{n \ne k} {\frac{{\lambda ^2 \left| {W_{nk} } \right|^2 }}{{\left( {E_k^{(0)}  - E_n^{(0)} } \right)^2 }}} } \right]\psi _k^{(0)}  \\
+ \end{array}
+\end{equation}
+
+能量本征值二级近似：
+
+\begin{equation}\label{22-14}
+E_k  = E_k^0  + \lambda W_{kk}  - \lambda ^2 \sum\limits_{n \ne k} {\frac{{\left| {W_{kn} } \right|^2 }}{{E_n^0  - E_k^0 }}}
+\end{equation}
+
+
+如果角标$k$表示的是系统的基态，则$E_n^0  > E_k^0 $，这样二级修正对能量的贡献总是负的；微扰很小时，微扰论才可适用，即：$\left| {\frac{{\lambda W_{mn} }}{{E_m^0  - E_n^0 }}} \right| \ll 1$，$m \ne n$，所以对能级过于``稠密''的系统不适用微扰论。
+
+\textbf{例1：电介质极化率}
+
+
+考虑各向同性电介质在外电场下的极化现象，无外电场时，介质中的离子在平衡位置附近作小的振动，可看作是简谐振动，沿$x$ 方向加均匀外电场$\rm E$，离子带电$q$，哈密顿量可写为：
+
+\begin{center}
+$\hat H = \frac{{\widehat p^2 }}{{2m}} + \frac{{m\omega ^2 x^2 }}{2} - q{\rm E}x$
+\end{center}
+
+取未微扰哈密顿为：
+
+\begin{center}
+$\hat H_0  = \frac{{\widehat p^2 }}{{2m}} + \frac{{m\omega ^2 x^2 }}{2}$,
+\end{center}
+
+
+即线性谐振子的哈密顿；其本征函数为：$\psi _n (x) = N_n e^{ - {\textstyle{{\alpha ^2 x^2 } \over 2}}} H_n \left( {\alpha x} \right)$, 能量本征值为: $E_n^0  = \hbar \omega \left( {n + {\textstyle{1 \over 2}}} \right)$
+
+微扰哈密顿为：
+
+\begin{center}
+$H' =  - q{\rm E}x$,
+\end{center}
+
+外电场应很小，所以${\rm E}$可看作是微扰参数；
+
+考虑到二级近似：$E_k  = E_k^0  + H'_{kk}  - \sum\limits_{n \ne k} {\frac{{\left| {H'_{kn} } \right|^2 }}{{E_n^0  - E_k^0 }}} $
+
+其中：$H'_{kn}  = \left\langle k \right| - q{\rm E}x\left| n \right\rangle  =  - q{\rm E}\left\langle k \right|x\left| n \right\rangle $
+
+利用：
+
+\begin{center}
+$\left\langle k \right|x\left| n \right\rangle  = \left( {\frac{\hbar }{{2m\omega }}} \right)^{1/2} \left( {\left\langle k \right|a\left| n \right\rangle  + \left\langle k \right|a^ +  \left| n \right\rangle } \right) = \left( {\frac{\hbar }{{2m\omega }}} \right)^{1/2} \left( {\sqrt {k + 1} \delta _{k + 1,n}  + \sqrt k \delta _{k - 1,n} } \right)$
+\end{center}
+
+$H'_{kk}  = 0$, $\sum\limits_{n \ne k} {\frac{{\left| {H'_{kn} } \right|^2 }}{{E_n^0  - E_k^0 }}}  = \left( {q{\rm E}} \right)^2 \left( {\frac{\hbar }{{2m\omega }}} \right)\left[ {\frac{{k + 1}}{{\hbar \omega }} - \frac{k}{{\hbar \omega }}} \right] = \frac{{q^2 {\rm E}^2 }}{{2m\omega ^2 }}$
+
+能量为：
+
+\begin{center}
+$E_k  = \left( {k + {\textstyle{1 \over 2}}} \right)\hbar \omega  - \frac{{q^2 {\rm E}^2 }}{{2m\omega ^2 }}$
+\end{center}
+
+即每个能级都下移了$\frac{{q^2 {\rm E}^2 }}{{2m\omega ^2 }}$。~\footnote{哈密顿$\hat H = \frac{{\widehat p^2 }}{{2m}} + \frac{{m\omega ^2 x^2 }}{2} - q{\rm E}x$可以使用线性变换：$x' = x - \frac{{q{\rm E}}}{{m\omega ^2 }}$
+严格求解:
+
+$\hat H = \frac{{\widehat p^2 }}{{2m}} + \frac{{m\omega ^2 x^2 }}{2} - q{\rm E}x = \frac{{\widehat p^2 }}{{2m}} + \frac{{m\omega ^2 }}{2}\left( {x - \frac{{q{\rm E}}}{{m\omega ^2 }}} \right)^2  - \frac{{q^2 {\rm E}^2 }}{{2m\omega ^2 }} = \frac{{\hat p'^2 }}{{2m}} + \frac{{m\omega ^2 x'^2 }}{2} - \frac{{q^2 {\rm E}^2 }}{{2m\omega ^2 }}$
+
+即每个能级都向下移动了$\frac{{q^2 {\rm E}^2 }}{{2m\omega ^2 }}$，表明计算到二级近似已经给出很好的结果；}
+
+
+波函数一级近似：$\psi _k  = \psi _k^0  + \sum\limits_{n \ne k} {\frac{{H'_{nk} }}{{E_k^0  - E_n^0 }}\psi _n^0 } $
+
+利用：
+
+\begin{center}
+$\left\langle k \right|x\left| n \right\rangle  = \left( {\frac{\hbar }{{2m\omega }}} \right)^{1/2} \left( {\left\langle k \right|a\left| n \right\rangle  + \left\langle k \right|a^ +  \left| n \right\rangle } \right) = \left( {\frac{\hbar }{{2m\omega }}} \right)^{1/2} \left( {\sqrt {k + 1} \delta _{k + 1,n}  + \sqrt k \delta _{k - 1,n} } \right)$
+\end{center}
+
+波函数为：
+
+\begin{center}
+$\psi _k  = \psi _k^0  + \frac{{q{\rm E}}}{{\hbar \omega }}\left( {\frac{\hbar }{{2m\omega }}} \right)^{{\textstyle{1 \over 2}}} \left[ {\sqrt {k + 1} \psi _{k + 1}^0  - \sqrt k \psi _{k - 1}^0 } \right]$
+\end{center}
+
+即未微扰波函数中混合进了与它相邻的两能级的波函数；
+
+
+离子的平均位置：
+
+未微扰（加弱电场前）：
+
+\begin{center}
+$\bar x = \left\langle {\psi _k^0 } \right|x\left| {\psi _k^0 } \right\rangle  = 0$
+\end{center}
+
+微扰后：
+
+
+$\begin{array}{l}
+ \bar x = \left\langle {\psi _k } \right|x\left| {\psi _k } \right\rangle  = \\
+ \left( {\left\langle k \right| + \frac{{q{\rm E}}}{{\hbar \omega }}\left( {\frac{\hbar }{{2m\omega }}} \right)^{{\textstyle{1 \over 2}}} \sqrt {k + 1} \left\langle {k + 1} \right| - \frac{{q{\rm E}}}{{\hbar \omega }}\left( {\frac{\hbar }{{2m\omega }}} \right)^{{\textstyle{1 \over 2}}} \sqrt k \left\langle {k - 1} \right|} \right) \times  \\
+ x\left( {\left| k \right\rangle  + \frac{{q{\rm E}}}{{\hbar \omega }}\left( {\frac{\hbar }{{2m\omega }}} \right)^{{\textstyle{1 \over 2}}} \sqrt {k + 1} \left| {k + 1} \right\rangle  - \frac{{q{\rm E}}}{{\hbar \omega }}\left( {\frac{\hbar }{{2m\omega }}} \right)^{{\textstyle{1 \over 2}}} \sqrt k \left| {k - 1} \right\rangle } \right) \\
+  = \frac{{q{\rm E}}}{{\hbar \omega }}\left( {\frac{\hbar }{{2m\omega }}} \right)^{{\textstyle{1 \over 2}}} \sqrt {k + 1}  \left( {\left\langle k \right|x\left| {k + 1} \right\rangle  + \left\langle {k + 1} \right|x\left| k \right\rangle } \right)  \\ 
+- \frac{{q{\rm E}}}{{\hbar \omega }}\left( {\frac{\hbar }{{2m\omega }}} \right)^{{\textstyle{1 \over 2}}} \sqrt k \left( {\left\langle k \right|x\left| {k - 1} \right\rangle  + \left\langle {k - 1} \right|x\left| k \right\rangle } \right) \\
+  = 2\frac{{q{\rm E}}}{{\hbar \omega }}\left( {\frac{\hbar }{{2m\omega }}} \right)\left( {k + 1} \right) - 2\frac{{q{\rm E}}}{{\hbar \omega }}\left( {\frac{\hbar }{{2m\omega }}} \right)k = \frac{{q{\rm E}}}{{m\omega ^2 }} \\
+ \end{array}$
+
+
+即平衡位置偏移了$\frac{{q{\rm E}}}{{m\omega ^2 }}$，外电场导致的电偶极矩为：
+
+\begin{equation}
+D = 2ql = 2\frac{{q^2 {\rm E}}}{{m\omega ^2 }}
+\end{equation}
+
+（考虑到电介质中正离子正向移动$l$，负离子反向移动$-l$，如食盐中的$Na^ +  ,Cl^ -  $；所以有系数2）
+
+
+根据极化率定义：$D = \alpha {\rm E}$，
+
+\begin{equation}
+\alpha  = \frac{D}{{\rm E}} = \frac{{2q^2 }}{{m\omega ^2 }}
+\end{equation}
+
+\subsection{简并定态微扰理论}
+
+\subsubsection{双态系统}
+
+所谓简并(degenerate), 就是存在几个不同的量子态,
+它们都对应相同的能量本征值$E$. 对$\left| 1 \right\rangle$, $\left| 2
+\right\rangle$, 如下哈密顿, 其本征值问题就是简并的,
+
+\begin{equation}\label{degenerate two state system}
+H_0 = E \left( \left| 1 \right\rangle \left\langle 1 \right| +
+\left| 2 \right\rangle \left\langle 2 \right| \right)
+\end{equation}
+
+把$H_0$写成矩阵形式,
+
+\begin{equation*}
+H_0 = \left( {\begin{array}{*{20}c}
+   E_0 & 0  \\
+   0 & E_0  \\
+ \end{array} } \right)
+\end{equation*}
+
+对简并定态微扰, 我们无法直接套用公式(\ref{Energy for 2nd order
+perturbation})(\ref{wave function for 1st order perturbation}),
+因为求和中出现的$\frac{1}{E_n^{(0)}-E_m^{(0)}}$是发散的.
+
+另一方面, 考虑微扰$H'$后, 简并是有可能打开的,
+原来不同态矢量对应相同能量本征值,
+现在是不同态矢量对应不同能量本征值.
+
+比如对简并的双态系统而言, 微扰$H'$可一般地写为:
+
+\begin{equation*}
+H' = \left( {\begin{array}{*{20}c}
+   E_1 & \Delta  \\
+   \Delta^* & E_2  \\
+ \end{array} } \right)
+\end{equation*}
+
+如$E_1 \ne E_2$则简并将显然被打开,
+往下我们只需套用简并定态微扰的公式即可. 需要讨论的是$E_1 =
+E_2$的情形, 为简单计, 我们考虑$E_1 = E_2 =0$, $\Delta =
+\Delta^*$的情况.
+
+我们需要求解的是如下哈密顿量:
+
+
+\begin{equation}\label{degenerate two state perturbation}
+H=H_0 + H'= \left( {\begin{array}{*{20}c}
+   E_0 & \Delta  \\
+   \Delta & E_0  \\
+\end{array} } \right)
+\end{equation}
+
+其解可直接套用公式(\ref{quadratic solution for E}), 得到:
+
+\begin{equation*}
+E_{1,2}=E_0 \pm \Delta
+\end{equation*}
+
+由于$\Delta \ne 0$, 简并已经打开了.
+
+把$E_1 = E_0 +\Delta$代入本征值问题: $H\psi = E\psi$中,
+假设本征向量是:
+
+\begin{equation*}
+\psi_1 = \left( \begin{gathered}
+  a \hfill \\
+  b \hfill \\
+\end{gathered}  \right)
+\end{equation*}
+
+解出: $a = b$, 即归一化本征矢是:
+
+\begin{equation*}
+\psi_1 = \frac{1}{\sqrt{2}} \left( \begin{gathered}
+  1 \hfill \\
+  1 \hfill \\
+\end{gathered}  \right)
+\end{equation*}
+
+把$E_2 = E_0 -\Delta$代入本征值问题: $H\psi = E\psi$中, 得到:
+$a=-b$, 归一化本征矢是:
+
+\begin{equation*}
+\psi_2 = \frac{1}{\sqrt{2}} \left( \begin{gathered}
+  1 \hfill \\
+  -1 \hfill \\
+\end{gathered}  \right)
+\end{equation*}
+
+
+\subsubsection{$f_n$重简并}
+
+考虑能级存在简并，能量本征值$E_n^0 $，对应有一系列本征函数：$\left\{ {\psi _{n\beta }^0 } \right\}$，其中：$\beta  = 1,2,...,f_n $，$f_n$称为简并度。
+
+\index{Degenerate: 简并}
+
+未微扰：
+
+\begin{equation}\label{22-16}
+H_0 \left| {n\beta } \right\rangle  = E_n^0 \left| {n\beta } \right\rangle , \beta  = 1,2,...,f_n
+\end{equation}
+
+其中：$\left\langle {{m\alpha }}
+ \mathrel{\left | {\vphantom {{m\alpha } {n\beta }}}
+ \right. \kern-\nulldelimiterspace}
+ {{n\beta }} \right\rangle  = \delta _{mn} \delta _{\alpha \beta } $，微扰后薛定谔方程：
+
+\begin{equation}\label{22-17}
+\left( {\hat H_0  + \lambda \hat W} \right)\left| \psi  \right\rangle  = E\left| \psi  \right\rangle
+\end{equation}
+
+左乘$\left\langle {m\alpha } \right|$：
+
+\begin{equation}\label{22-18}
+\left\langle {m\alpha } \right|\left( {\hat H_0  + \lambda \hat W} \right)\left| \psi  \right\rangle  = E\left\langle {m\alpha } \right.\left| \psi  \right\rangle
+\end{equation}
+
+利用完备性关系：$\sum\limits_{n\beta } {\left| {n\beta } \right\rangle \left\langle {n\beta } \right|}  = 1$, 方程(\ref{22-18})化为：
+
+\begin{equation}\label{22-19}
+\begin{array}{c}
+\sum\limits_{n\beta } {\left\langle {m\alpha } \right|} H_0  + \lambda W\left| {n\beta } \right\rangle \left\langle {n\beta } \right|\left. \psi  \right\rangle  = \\
+E_m^0 \delta _{mn} \delta _{\alpha \beta } \left\langle {n\beta } \right|\left. \psi  \right\rangle  + \lambda \sum\limits_{n\beta } {W_{m\alpha ,n\beta } \left\langle {n\beta } \right|\left. \psi  \right\rangle }  = E\left\langle {m\alpha } \right.\left| \psi  \right\rangle \\
+\end{array}
+\end{equation}
+
+即：
+
+\begin{equation}\label{22-20}
+E_m^0 a_{m\alpha }  + \lambda \sum\limits_{n\beta } {W_{m\alpha ,n\beta } a_{n\beta } }  = Ea_{m\alpha }
+\end{equation}
+
+
+其中：$W_{m\alpha ,n\beta }  = \left\langle {m\alpha } \right|W\left| {n\beta } \right\rangle $, $a_{n\beta }  = \left\langle {n\beta } \right|\left. \psi  \right\rangle $
+
+
+把能量本征值及波函数系数按微扰参数展开：
+
+\begin{equation}\label{22-21}
+\left\{ \begin{array}{l}
+ a_{n\beta }  = a_{n\beta }^{(0)}  + \lambda a_{n\beta }^{(1)}  + \lambda ^2 a_{n\beta }^{(2)}  + ... \\
+ E = E^{(0)}  + \lambda E^{(1)}  + \lambda ^2 E^{(2)}  + ... \\
+ \end{array} \right.
+\end{equation}
+
+代入薛定谔方程：$\left( {E_m^0  - E} \right)a_{m\alpha }  + \lambda \sum\limits_{n\beta } {W_{m\alpha ,n\beta } a_{n\beta } }  = 0$，（形式与非简并时完全一样）
+
+得到：
+
+$\lambda ^0 $次幂：$\left( {E_m^0  - E^{(0)} } \right)a_{m\alpha }^{(0)}  = 0$
+
+$\lambda ^1 $次幂：
+
+\begin{equation*} 
+{\left( {W_{m\alpha ,m\alpha }  - E^{(1)} } \right)a_{m\alpha }^{(0)}  + \left( {E_m^0  - E^{(0)} } \right)a_{m\alpha }^{(1)}  + \sum\limits_{n\beta  \ne m\alpha } {W_{m\alpha ,n\beta } a_{n\beta }^{(0)} } }  = 0
+\end{equation*}
+
+考虑简并能级$E_k^0 $，简并度$f_k$；
+
+\textbf{零级近似：}
+
+考虑：$\left( {E_m^0  - E^{(0)} } \right)a_{m\alpha }^{(0)}  = 0$，$\alpha  = 1,2,...,f_k $
+
+
+$E^0  = E_k^0 $；波函数的系数：$a_{m\alpha }^{(0)}  = \delta _{mk} a_\alpha  $，$\alpha  = 1,2,...,f_k $，$a_\alpha  $是迭加系数，可取任意值，所以无法确定此时的波函数；我们可把零级近似波函数看作是$E_k^0 $对应本征矢张成的$f_k$ 维空间中各个本征态的线性迭加；
+
+\begin{equation}\label{22-22}
+\begin{array}{l}
+{\left( {W_{m\alpha ,m\alpha }  - E^{(1)} } \right)a_{m\alpha }^{(0)}  + \left( {E_m^0  - E^{(0)} } \right)a_{m\alpha }^{(1)}  + \sum\limits_{\beta  \ne \alpha } {W_{k\alpha ,k\beta } a_{k\beta }^{(0)} } } = 0,\\ 
+a_{n\beta }^{(0)}  = \delta _{nk} a_\beta \\
+\end{array}
+\end{equation}
+
+$m = k$时，我们把$W_{m\alpha ,m\beta }  = W_{k\alpha ,k\beta } $，简记为$W_{\alpha \beta } $
+
+\begin{equation}\label{22-23}
+\left[ {\left( {W_{\alpha \alpha }  - E^{(1)} } \right)a_\alpha   + \sum\limits_{\beta  \ne \alpha } {W_{\alpha \beta } a_\beta  } } \right] = 0
+\end{equation}
+
+即：$\sum\limits_{\beta  = 1}^{f_k } {\left( {W_{\alpha \beta }  - E^{(1)} \delta _{\alpha \beta } } \right)a_\beta  }  = 0$，有非零解的条件是：
+
+\begin{equation}\label{22-24}
+\det \left| {W_{\alpha \beta }  - E^{(1)} \delta _{\alpha \beta } } \right| = 0 ,
+\end{equation}
+
+方程(\ref{22-24})可解出$f_k$个实根，$E_{k\alpha }^{(1)} $，$\alpha  = 1,2,...,f_k $，对应可解出$f_k$组系数$a_{\alpha \beta } $，即可求得零级近似下波函数：
+
+\begin{equation}\label{22-25}
+\left| {\psi _{k\alpha } } \right\rangle  = \sum\limits_\beta  {a_{\alpha \beta } \left| {k\beta } \right\rangle } ,\alpha  = 1,2,...,f_k
+\end{equation}
+
+零级近似下能量本征值：
+
+\begin{equation}\label{22-26}
+E = E_k^{(0)}  + \lambda E_{k\alpha }^{(1)} , \alpha  = 1,2,...,f_k
+\end{equation}
+
+能级简并有可能被打破，但如久期方程存在重根，则还存在简并。
+
+\textbf{例2：氢原子第二能级（n=2）Stark效应}
+
+\index{Stark effect: 斯塔克效应}
+
+原子在外电场中，光谱线将发生分裂，称为Stark效应，以氢原子第二能级为例；
+氢原子基态是非简并的，基态波函数：$\psi _{100} $；对应基态能：$E_1  =  - \frac{{e^2 }}{{2a_0 }}$
+
+
+氢原子第一激发态（n=2），简并度为4：$\psi _1^0  = \psi _{200} $, $\psi _2^0  = \psi _{210} $, $\psi _3^0  = \psi _{211} $, $\psi _4^0  = \psi _{21 - 1} $
+
+
+对应能量本征值为：$E_2  =  - \frac{{e^2 }}{{2a_0 }} \cdot \frac{1}{{2^2 }}$
+
+
+假设外电场沿z轴方向，在原子尺度内，电子与原子核的库仑作用（${\rm E} = \frac{{e^2 }}{{a_0 }} \sim 5 \times 10^9 V/cm$）远大于外加电场（实验值一般为$10^4  \sim 10^5 V/cm$），所以可看作是简并微扰问题；
+
+微扰哈密顿：$H' = e{\rm E}z = \lambda W = e{\rm E}r\cos \theta $
+
+计算矩阵元：$\left\langle {2l'm'} \right.\left| {e{\rm E}r\cos \theta } \right|\left. {2lm} \right\rangle  = e{\rm E}\left\langle {2l'm'} \right.\left| {r\cos \theta } \right|\left. {2lm} \right\rangle $
+
+利用递推公式：
+
+\begin{equation}
+\cos \theta \left| {lm} \right\rangle  = \sqrt {\frac{{(l + 1)^2  - m^2 }}{{(2l + 1)(2l + 3)}}} \left| {l + 1,m} \right\rangle  + \sqrt {\frac{{l^2  - m^2 }}{{(2l - 1)(2l + 1)}}} \left| {l - 1,m} \right\rangle 
+\end{equation}
+
+和正交归一关系：$\int_0^{2\pi } {d\varphi \int_0^\pi  {\sin \theta d\theta Y_{l,m}^* (\theta ,\varphi )Y_{l',m'} (\theta ,\varphi )} }  = \delta _{ll'} \delta _{mm'} $
+
+
+只有$l' = l \pm 1,m' = m$的项可能存在，跃迁规则：$\Delta l =  \pm 1,\Delta m = 0$；
+
+
+即只有$\left\langle {\psi _{200} } \right|e{\rm E}r\cos \theta
+\left| {\psi _{210} } \right\rangle $，$\left\langle {\psi _{210} }
+\right|e{\rm E}r\cos \theta \left| {\psi _{200} } \right\rangle
+$两项可能存在；
+
+
+$\psi _1^0  = \psi _{200}  = R_{20} Y_{00}  = \frac{1}{{\sqrt {2a^3 } }}\left( {1 - \frac{r}{{2a}}} \right)\exp \left[ { - {\textstyle{r \over {2a}}}} \right]Y_{00} $
+
+
+$\psi _2^0  = \psi _{210}  = R_{21} Y_{10}  = \frac{1}{{2\sqrt {6a^3 } }}\frac{r}{a}\exp \left[ { - {\textstyle{r \over {2a}}}} \right]Y_{10} $
+
+
+
+$\left\langle {\psi _{200} } \right|e{\rm E}r\cos \theta \left| {\psi _{210} } \right\rangle  = e{\rm E}\left\langle {\psi _{200} } \right|r\cos \theta \left| {\psi _{210} } \right\rangle  = e{\rm E}\left\langle {00} \right|R_{20} rR_{21} \cos \theta \left| {10} \right\rangle $
+
+
+
+$\cos \theta \left| {10} \right\rangle  = \sqrt {\frac{4}{{15}}} \left| {20} \right\rangle  + \sqrt {\frac{1}{3}} \left| {00} \right\rangle $, $n=2$时，$\left| {20} \right\rangle $项无意义；
+
+$\left\langle {\psi _{200} } \right|e{\rm E}r\cos \theta \left| {\psi _{210} } \right\rangle  = \frac{{e{\rm E}}}{{\sqrt 3 }}\left\langle {00} \right|R_{20} rR_{21} \left| {00} \right\rangle $
+
+
+利用积分：
+
+$\begin{array}{l}
+ \left\langle {00} \right|R_{20} rR_{21} \left| {00} \right\rangle  = \int {r^2 dr} R_{20} rR_{21} \int {d\Omega \left\langle {{00}}
+ \mathrel{\left | {\vphantom {{00} {00}}}
+ \right. \kern-\nulldelimiterspace}
+ {{00}} \right\rangle }  \\
+  = \int_0^\infty  {r^3 R_{20} R_{21} dr}  = \int_0^\infty  {r^3 dr\frac{1}{{\sqrt {2a^3 } }}\left( {1 - \frac{r}{{2a}}} \right)\exp \left[ { - {\textstyle{r \over {2a}}}} \right]} \frac{1}{{2\sqrt {6a^3 } }}\frac{r}{a}\exp \left[ { - {\textstyle{r \over {2a}}}} \right] \\
+  = \int_0^\infty  {r^3 dr\frac{1}{{2\sqrt {12a^6 } }}} \left( {\frac{r}{a} - \frac{{r^2 }}{{2a^2 }}} \right)\exp \left[ { - {\textstyle{r \over a}}} \right] \\
+  = \int_0^\infty  {\frac{1}{{4\sqrt 3 }}\frac{{r^4 }}{{a^4 }}} \exp \left[ { - {\textstyle{r \over a}}} \right]dr - \int_0^\infty  {\frac{1}{{8\sqrt 3 }}\frac{{r^5 }}{{a^5 }}} \exp \left[ { - {\textstyle{r \over a}}} \right]dr \\
+  = \int_0^\infty  {\frac{1}{{4\sqrt 3 }}} \frac{{r^4 }}{{a^4 }}\left( {1 - \frac{r}{{2a}}} \right)\exp \left[ { - {\textstyle{r \over a}}} \right]dr \\
+  = \frac{a}{{4\sqrt 3 }}\int_0^\infty  {\rho ^4 \left( {1 - {\textstyle{\rho  \over 2}}} \right)e^{ - \rho } d\rho }  \\
+ \end{array}$
+
+计算得：
+
+
+\begin{eqnarray*}
+\left\langle {\psi _{200} } \right|e{\rm E}r\cos \theta \left| {\psi _{210} } \right\rangle & = & \frac{{e{\rm E}}}{{\sqrt 3 }}\left\langle {00} \right|R_{20} rR_{21} \left| {00} \right\rangle \\
+{} & = & \frac{{e{\rm E}a}}{{12}}\int_0^\infty  {\rho ^4 \left( {1 - {\textstyle{\rho  \over 2}}} \right)e^{ - \rho } d\rho } \\
+{} & = &  - 3e{\rm E}a\\
+\left\langle {\psi _{210} } \right|e{\rm E}r\cos \theta \left| {\psi _{200} } \right\rangle & = & \left\langle {\psi _{200} } \right|e{\rm E}r\cos \theta \left| {\psi _{210} } \right\rangle ^* \\
+{} &  = &  - 3e{\rm E}a
+ \end{eqnarray*}
+
+
+久期方程：
+
+\begin{eqnarray*}
+{} &{}& \det \left| {\begin{array}{*{20}c}
+   { - \lambda E^{(1)} } & { - 3e{\rm E}a} & 0 & 0  \\
+   { - 3e{\rm E}a} & { - \lambda E^{(1)} } & 0 & 0  \\
+   0 & 0 & { - \lambda E^{(1)} } & 0  \\
+   0 & 0 & 0 & { - \lambda E^{(1)} }  \\
+\end{array}} \right|  \\
+{} &=& \left[ {\left( {\lambda E^{(1)} } \right)^2  - \left( {3e{\rm E}a} \right)^2 } \right] \left( {\lambda E^{(1)} } \right)^2  = 0
+\end{eqnarray*}
+
+
+
+解出: $\lambda {\rm E}^{(1)}  =  \pm 3e{\rm
+E}a,0,0$，一级近似能量本征值：$E =  - \frac{{e^2 }}{{2a}} \cdot
+\frac{1}{{2^2 }} \pm 3e{\rm
+E}a$，即能级分裂为三条，且分裂的大小正比于外加电场${\rm
+E}$。（这里$a = a_0$是玻尔半径）
+
+
+零级近似波函数：
+
+
+当$\lambda {\rm E}^{(1)}  = 3e{\rm E}a_0 $时，$\psi _1^0  = \frac{1}{{\sqrt 2 }}\left( {\psi _{200}  - \psi _{210} } \right)$
+
+当$\lambda {\rm E}^{(1)}  =  - 3e{\rm E}a_0 $时，$\psi _2^0  = \frac{1}{{\sqrt 2 }}\left( {\psi _{200}  + \psi _{210} } \right)$
+
+当$\lambda {\rm E}^{(1)}  = 0$时，二重根，$\psi _{3,4}^0  = a\psi _{211}  + b\psi _{21 - 1} $，$\sqrt {a^2  + b^2 }  = 1$；a，b表示任意迭加系数，$\psi _{211} $，$\psi _{21-1}$的简并还没有分开。

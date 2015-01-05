@@ -1,0 +1,178 @@
+\section{变分法}
+
+\begin{quotation}
+“现实世界中所有的方程只是近似。我们只能使它们越来越趋于精确。尽管这些方程只是近似，但它们仍然是美的。”\qquad 狄拉克\footnote{``I owe a lot to my engineering training because it [taught] me to tolerate approximations. Previously to that I thought...one should just concentrate on exact equations all the time. Then I got the idea that in the actual world all our equations are only approximate. We must just tend to greater and greater accuracy. In spite of the equations being approximate, they can be beautiful.''}
+
+\end{quotation}
+
+微扰论求解量子力学问题是有限制的，
+即必须把微扰后哈密顿表示为一个可严格求解的哈密顿与一个足够小的微扰哈密顿之和：$H = H_0  + H'$。但实际上有时我们很难把总哈密顿写成以上形式，
+或者使用微扰论求解时发现波函数和能量本征值并不收敛，
+这些都会导致微扰论不适用或误差太大。为了求解这类量子力学问题，我们必须使用其他近似方法。
+
+使用变分法，我们可以方便地求得系统的基态能及对应基态波函数。
+基态能是物理系统可能能量取值的最低值，在量子力学中物理系统是由波函数$\left| \psi  \right\rangle $来描述的，而对应能量取值为：
+
+\begin{equation}\label{23-1}
+E = \frac{{\left\langle {\psi \left| H \right.\left| \psi  \right\rangle } \right.}}{{\left\langle {\psi }
+ \mathrel{\left | {\vphantom {\psi  \psi }}
+ \right. \kern-\nulldelimiterspace}
+ {\psi } \right\rangle }}
+\end{equation}
+
+基态能：
+
+\begin{equation}\label{23-2}
+E_0  = \mathop {\min }\limits_{\psi  \in \cal{H}} \left( {\frac{{\left\langle {\psi \left| {\widehat H} \right.\left| \psi  \right\rangle } \right.}}{{\left\langle {\psi }
+ \mathrel{\left | {\vphantom {\psi  \psi }}
+ \right. \kern-\nulldelimiterspace}
+ {\psi } \right\rangle }}} \right)
+\end{equation}
+
+是所有可能状态中能量最低的。
+
+$\psi  \in \cal{H}$ 表示波函数是Hilber Space中的一个矢量，我们尚未要求波函数归一。因此基态能量的求解问题就成为一个变分问题，即波函数变化，使能量达到最小值：
+
+\begin{equation}\label{23-3}
+\delta E = \delta \left( {\frac{{\left\langle {\psi \left| H \right.\left| \psi  \right\rangle } \right.}}{{\left\langle {\psi }
+ \mathrel{\left | {\vphantom {\psi  \psi }}
+ \right. \kern-\nulldelimiterspace}
+ {\psi } \right\rangle }}} \right) = 0
+\end{equation}
+
+\subsection{薛定谔方程的等价变分表示}
+
+\textbf{定理：}对于归一波函数$\left\langle {\psi }
+ \mathrel{\left | {\vphantom {\psi  \psi }}
+ \right. \kern-\nulldelimiterspace}
+ {\psi } \right\rangle  = 1$，变分问题$\delta \left\langle {\psi \left| H \right.\left| \psi  \right\rangle } \right. = 0$等价于薛定谔方程；
+
+\textbf{证明：}
+
+$\delta \left\langle {\psi \left| H \right.\left| \psi  \right\rangle } \right. = \left( {\delta \left\langle \psi  \right|} \right)\left. H \right|\left. \psi  \right\rangle  + \left\langle \psi  \right|H\left( {\delta \left| \psi  \right\rangle } \right) = 0$
+
+由：$\left\langle {\psi }
+ \mathrel{\left | {\vphantom {\psi  \psi }}
+ \right. \kern-\nulldelimiterspace}
+ {\psi } \right\rangle  = 1$
+
+\begin{equation*}
+\delta \left\langle {\psi }
+ \mathrel{\left | {\vphantom {\psi  \psi }}
+ \right. \kern-\nulldelimiterspace}
+ {\psi } \right\rangle  = \left( {\delta \left\langle \psi  \right|} \right)\left| \psi  \right\rangle  + \left\langle \psi  \right.\left| {\left( {\delta \left| \psi  \right\rangle } \right)} \right. = 0
+\end{equation*}
+
+\begin{eqnarray*}
+{} &{}& \delta \left\langle {\psi \left| H \right.\left| \psi  \right\rangle } \right. - \lambda \delta \left\langle {\psi }
+ \mathrel{\left | {\vphantom {\psi  \psi }}
+ \right. \kern-\nulldelimiterspace}
+ {\psi } \right\rangle  \\
+{} & = & \left( {\delta \left\langle \psi  \right|} \right)\left. H \right|\left. \psi  \right\rangle  + \left\langle \psi  \right|H\left( {\delta \left| \psi  \right\rangle } \right) - \lambda \left( {\delta \left\langle \psi  \right|} \right)\left| \psi  \right\rangle  - \lambda \left\langle \psi  \right.\left| {\left( {\delta \left| \psi  \right\rangle } \right)} \right. \\
+{} & = & \left( {\delta \left\langle \psi  \right|} \right)\left( {\left. H \right|\left. \psi  \right\rangle  - \lambda \left| \psi  \right\rangle } \right) + \left( {\left\langle \psi  \right|H - \lambda \left\langle \psi  \right|} \right)\left( {\delta \left| \psi  \right\rangle } \right) = 0 
+\end{eqnarray*}
+
+$\left( {\delta \left\langle \psi  \right|} \right)$与$\left( {\delta \left| \psi  \right\rangle } \right)$是两独立的变分；推出：
+
+\begin{eqnarray*}
+H\left| \psi  \right\rangle &  = & \lambda \left| \psi  \right\rangle  \\
+ \left\langle \psi  \right|H & = & \lambda \left\langle \psi  \right| 
+\end{eqnarray*}
+
+$E = \lambda $，即定态薛定谔方程。
+
+
+\subsection{使用变分法求解的过程}
+
+\index{Variational methods: 变分法}
+
+\index{Trial wave function: 试探波函数}
+
+\index{Ground state: 基态}
+
+\begin{enumerate}
+    \item 根据所讨论物理问题，选取合适的试探波函数$\psi \left( \alpha  \right)$，$\alpha$是变分参数。
+    \item 计算能量：
+
+\begin{equation}\label{23-4}
+E\left( \alpha  \right) = \frac{{\int {d\tau \psi ^* (\alpha )H\psi (\alpha )} }}{{\int {d\tau \psi ^* (\alpha )\psi (\alpha )} }}
+\end{equation}
+
+    \item 求解$E(\alpha )$的最小值：
+
+$\frac{{\partial E(\alpha )}}{{\partial \alpha }} = 0$
+$ \Rightarrow \alpha  = \alpha _0 $
+
+
+并以$E_0  = E(\alpha _0 )$，$\psi _0  = \psi (\alpha _0 )$作为对基态的近似。
+   \end{enumerate}
+
+\textbf{例题：}应用变分法，研究线性谐振子：$H = \frac{{p^2 }}{{2m}} + \frac{{m\omega ^2 x^2 }}{2}$的解。
+
+解1：设试探波函数为高为1，底边为$2a$的等腰三角形，即：
+
+\index{Linear Oscillator: 线性谐振子}
+
+\begin{center}
+$\psi (x) = \left\{ \begin{array}{l}
+ {\textstyle{x \over a}} + 1,x \in \left[ { - a,0} \right] \\
+  - {\textstyle{x \over a}} + 1,x \in \left[ {0,a} \right] \\
+ \end{array} \right.$
+\end{center}
+
+
+$\begin{array}{l}
+ E(a) = \frac{{ - {\textstyle{{\hbar ^2 } \over {2m}}}\int_{ - a}^a {\psi \psi ''dx}  + \int_{ - a}^a {{\textstyle{{m\omega ^2 x^2 } \over 2}}\psi ^2 dx} }}{{\int_{ - a}^a {\psi ^2 dx} }} = \frac{{{\textstyle{{\hbar ^2 } \over {2m}}}\int_{ - a}^a {\psi {\textstyle{2 \over a}}\delta (x)dx}  + {\textstyle{{m\omega ^2 } \over 2}}\int_{ - a}^a {x^2 \psi ^2 dx} }}{{\int_{ - a}^a {\psi ^2 dx} }} \\
+  = \frac{{{\textstyle{{\hbar ^2 } \over {ma}}} + {\textstyle{{m\omega ^2 a^3 } \over {30}}}}}{{{\textstyle{{2a} \over 3}}}} = \frac{{3\hbar ^2 }}{{2ma^2 }} + \frac{{m\omega ^2 a^2 }}{{20}} \\
+ \end{array}$
+
+
+$\frac{{\partial E(\alpha )}}{{\partial \alpha }} =  - \frac{{3\hbar ^2 }}{{ma^3 }} + \frac{{m\omega ^2 a}}{{10}} = 0$
+$ \Rightarrow a_0 ^4  = \frac{{30\hbar ^2 }}{{m^2 \omega ^2 }} \Rightarrow a_0  = \sqrt[4]{{30}}\sqrt {\frac{\hbar }{{m\omega }}}  \approx 2.34\sqrt {\frac{\hbar }{{m\omega }}} $
+
+$E(a_0 ) = 0.548\hbar \omega $，与精确值$E_0  = \frac{{\hbar \omega }}{2}$比较，要高出约10$\%$。
+
+
+解2：根据对哈密顿的分析，波函数应具有下列行为：(1)当$x \to 0$时，$V(x) \to 0$，波函数应为正弦震荡型的，$\psi (x) \to \sin kx$；(2)当$x \to  \pm \infty $，$V(x) \to \infty $，$\psi (x) \to 0$；(3)对于基态波函数而言，波节数目应为0，即波函数在有限空间内与$x$轴无交点。
+
+
+根据以上考虑，设试探波函数为：$\psi  = \exp \left( { - \frac{{\lambda ^2 x^2 }}{2}} \right)$
+
+\begin{eqnarray*}
+H\psi  & = & \left( { - \frac{{\hbar ^2 }}{{2m}}\frac{{\partial ^2 }}{{\partial x^2 }} + \frac{{m\omega ^2 x^2 }}{2}} \right)\exp \left( { - \frac{{\lambda ^2 x^2 }}{2}} \right) \\
+{} &=& \left[ {\frac{{\hbar ^2 }}{{2m}}\left( {\lambda ^2  - \lambda ^4 x^2 } \right) + \frac{{m\omega ^2 x^2 }}{2}} \right]\exp \left( { - \frac{{\lambda ^2 x^2 }}{2}} \right)
+\end{eqnarray*}
+
+$\left\langle \psi  \right|H\left| \psi  \right\rangle  = \frac{{\sqrt \pi  }}{{2\lambda ^3 }}\left( {\frac{{\hbar ^2 \lambda ^4 }}{{2m}} + \frac{{m\omega ^2 }}{2}} \right)$, $\left\langle {\psi }
+ \mathrel{\left | {\vphantom {\psi  \psi }}
+ \right. \kern-\nulldelimiterspace}
+ {\psi } \right\rangle  = \frac{{\sqrt \pi  }}{\lambda }$
+
+
+$E(\lambda ) = \frac{{\left\langle \psi  \right|H\left| \psi  \right\rangle }}{{\left\langle {\psi }
+ \mathrel{\left | {\vphantom {\psi  \psi }}
+ \right. \kern-\nulldelimiterspace}
+ {\psi } \right\rangle }} = \frac{1}{{2\lambda ^2 }}\left( {\frac{{\hbar ^2 \lambda ^4 }}{{2m}} + \frac{{m\omega ^2 }}{2}} \right)$,
+
+$\frac{{\partial E(\lambda )}}{{\partial \lambda }} = \frac{{\hbar ^2 \lambda }}{{2m}} - \frac{{m\omega ^2 }}{{2\lambda ^3 }} = 0$
+
+
+解出：
+
+$\lambda _0^4  = \frac{{m^2 \omega ^2 }}{{\hbar ^2 }} \Rightarrow \lambda _0^2  = \frac{{m\omega }}{\hbar }$
+
+所以：$E(\lambda _0 ) = \frac{{\hbar \omega }}{2}$，与精确值完全吻合；
+
+求得波函数$\psi (\lambda _0 ) = \sqrt[4]{{\frac{{m\omega }}{{\pi \hbar }}}}\exp \left( { - \frac{{m\omega x^2 }}{{2\hbar }}} \right)$与严格基态波函数完全一致。
+
+\subsection*{讨论}
+
+\begin{enumerate}
+    \item 变分法求得的基态能及对应基态波函数是试探波函数对物理问题的最佳近似，
+因此并不一定对应于严格的基态能和严格的基态波函数；
+其精确程度或误差决定于我们选取什么样的波函数为试探波函数。
+如何选取试探波函数是建立在我们对物理问题的分析基础上的。
+
+    \item 变分法求解基态是方便的，但求解激发态则比较烦琐，我们可通过求解与已知基态正交的次低能态的方法，
+依次求解出第一激发态、第二激发态……
+   \end{enumerate}

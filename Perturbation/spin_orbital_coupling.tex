@@ -1,0 +1,667 @@
+\section{自旋轨道相互作用}
+
+\begin{quotation}
+``问题不在于这种看法是不是对，而在于我们从现有的信息可以很诚实地得出什么样的有利于它的论证。''\qquad 玻尔
+\end{quotation}
+
+\subsection{自旋-轨道相互作用}
+
+原子在弱磁场$B_z$中，电子作轨道运动所产生磁场$B'$与外加磁场$B_z$相比不可以忽略，因此自旋轨道相互作用必须考虑。
+
+
+线电流元$Idl$产生磁场：
+
+
+\begin{equation}\label{30-1}
+\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over B} (r) = \frac{{\mu _0 }}{{4\pi }}\frac{{Id\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over l'}  \times \mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over R} }}{{R^3 }}
+\end{equation}
+
+
+电子作轨道运动所产生磁场是相对于原子核静止参照系而言的，如果考虑电子静止，原子核将相对于电子运动，并在电子位置（$\vec r$ ）产生磁场\footnote{考虑$v \ll c$，方向在$z$轴方向}：
+
+
+\begin{equation}\label{30-2}
+\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over B} '(r) = \frac{{\mu _0 }}{{4\pi }}\frac{{Ze\left( { - \mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over v} } \right) \times \mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over r} }}{{r^3 }} =  - \varepsilon _0 \mu _0 \mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over v}  \times \frac{{Ze\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over r} }}{{4\pi \varepsilon _0 r^3 }} =  - \varepsilon _0 \mu _0 \mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over v}  \times \mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over E}
+\end{equation}
+
+
+电场强度：$\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over E}  =  - \nabla \phi  =  - \frac{{\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over r} }}{r}\frac{{d\phi }}{{dr}}$
+
+
+自旋轨道相互作用(Spin-orbit interaction)\index{Spin-orbit interaction: 自旋轨道相互作用}：
+
+$H'_{SL}  =  - \mu _S  \cdot B'_L  = g_s \mu _B S \cdot \left( {\varepsilon _0 \mu _0 \mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over v}  \times \frac{{\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over r} }}{r}\frac{{d\phi }}{{dr}}} \right) =  - g_s \mu _B S \cdot \left( {\varepsilon _0 \mu _0 \frac{{\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over r}  \times \mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\rightharpoonup$}}
+\over v} }}{r}\frac{{d\phi }}{{dr}}} \right) =  - \frac{{g_s \mu _B \varepsilon _0 \mu _0 }}{m}\left( {S \cdot L} \right)\frac{1}{r}\frac{{d\phi }}{{dr}}
+  =  - \frac{{g_s e}}{{2m^2 c^2 }}\left( {S \cdot L} \right)\frac{1}{r}\frac{{d\phi }}{{dr}} = \frac{{g_s }}{{2m^2 c^2 }}\left( {S \cdot L} \right)\frac{1}{r}\frac{{dV}}{{dr}} = \frac{1}{{m^2 c^2 }}\frac{1}{r}\frac{{dV}}{{dr}}\left( {S \cdot L} \right)$
+
+其中：$V =  - e\phi $为电子在中心力场中势能。
+
+
+转换到原子核静止参照系，并考虑相对论效应后
+\footnote{利用相对论，考虑电子坐标系的托马斯进动可求得正确的自旋-轨道耦合能，
+请参考：J D Jackson, Classical Electrodynamics, 3rd Edition, 552
+\\不使用非相对论也可求出正确的结果，请参考：杨桂林等《近代物理》第124页。}：
+
+\begin{equation}\label{30-3}
+H'_{SL}  = \frac{1}{{2m^2 c^2 }}\frac{1}{r}\frac{{dV}}{{dr}}\left( {S \cdot L} \right)
+\end{equation}
+
+于是体系总哈密顿写为：
+
+\begin{equation}\label{30-4}
+H = H_0  + H'_{SL}  =  - \frac{{\hbar {}^2}}{{2m}}\nabla ^2  + V\left( r \right) + \xi \left( r \right)S \cdot L
+\end{equation}
+
+其中：$\xi \left( r \right) = \frac{1}{{2m^2 c^2 }}\frac{1}{r}\frac{{dV}}{{dr}}$叫做自旋轨道耦合项，是微扰项；对类氢离子，$\xi \left( r \right)$
+的数量级为约$1.4 \times 10^{ - 3} eV$，属于精细结构的能量范围。对微扰前哈密顿量$H_0$，力学量完全集是($H_0, L^2, L_z, S^2,
+S_z$), 对应波函数可写为: $\psi_{nlm}(r, \theta, \phi) \chi(s_z)$,
+这里$\chi(s_z = \uparrow) = (1,0)^T$, $\chi(s_z = \downarrow) =
+(0,1)^T$.
+
+
+\subsection{总角动量}
+
+由于自旋轨道耦合项$\xi \left( r \right)S \cdot L$的存在, $H$与$L_z$, $S_z$不再对易。
+
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  \left[ L \cdot S, L_z \right] &=& -L_y S_x + L_x S_y \neq 0 \\
+  \left[ L \cdot S, S_z \right] &=& -L_x S_y + L_y S_x \neq 0
+\end{eqnarray*}
+
+但我们注意到, $\left[ L \cdot S, L_z +S_z  \right] = 0$,
+这意味着我们可定义总角动量$J = L+S$, 使$[H, J_z] = 0$。
+
+对总角动量$J$，我们可证明,
+
+\begin{equation*}
+    \left[ J_x, J_y \right] = i \hbar J_z
+\end{equation*}
+
+总角动量$J$仍是角动量，满足角动量的对易关系。我们可证明$(H, L^2, S^2,
+J^2, J_z)$
+构成两两都对易的力学量完全集。即我们可构造一个基于总角动量量子数$j$,
+和总角动量第三分量量子数$j_z$的共同本征波函数$\phi (\theta, \varphi,
+s_z) = \left( {\begin{array}{*{20}c} \phi_1(\theta, \varphi, s_z =
+\frac{\hbar}{2}) \\ \phi_2(\theta, \varphi, s_z = - \frac{\hbar}{2})
+\\ \end{array} } \right)$。使得如下本征值问题同时成立：
+
+\begin{equation*}
+    L^2 \left( {\begin{array}{*{20}c}
+   \phi_1  \\
+   \phi_2  \\
+ \end{array} } \right)
+= C\left( {\begin{array}{*{20}c}
+   \phi_1  \\
+   \phi_2  \\
+ \end{array} } \right)
+\end{equation*}
+
+
+\begin{equation*}
+J_z \left( {\begin{array}{*{20}c}
+   \phi_1  \\
+   \phi_2  \\
+ \end{array} } \right) = L_z \left( {\begin{array}{*{20}c}
+   \phi_1  \\
+   \phi_2  \\
+ \end{array} } \right) + \frac{\hbar}{2} \left( {\begin{array}{*{20}c}
+   1 & 0  \\
+   0 & { - 1}  \\
+ \end{array} } \right)
+  \left( {\begin{array}{*{20}c}
+   \phi_1  \\
+   \phi_2  \\
+ \end{array} } \right)
+= j_z \left( {\begin{array}{*{20}c}
+   \phi_1  \\
+   \phi_2  \\
+ \end{array} } \right)
+\end{equation*}
+
+
+这意味着：
+
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  L_z \phi_1 &=& (j_z - \frac{\hbar}{2} ) \phi_1  \\
+  L_z \phi_2 &=& (j_z + \frac{\hbar}{2}) \phi_2
+\end{eqnarray*}
+
+$L_z$的本征值是整数，假设$L_z \phi_1 (\theta, \varphi) = m \hbar
+\phi_1 (\theta, \varphi)$的话, 则$L_z \phi_2 (\theta, \varphi) =
+(m+1)\hbar \phi_2 (\theta, \varphi)$, $\phi_1, \phi_2$都是球谐函数,
+而$\phi = \left( {\begin{array}{*{20}c}
+   \phi_1  \\
+   \phi_2  \\
+ \end{array} } \right)$则是个列向量, 自旋向上的分量是$\phi_1 = a Y_{l,m}$，自旋向下的分量是$\phi_2 = b Y_{l,m+1}$。
+
+
+$\phi$使如下本征值方程成立：
+
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  L^2 \phi &=& l(l+1)\hbar^2 \phi \\
+  J_z \phi &=& (m + \frac{1}{2}) \hbar
+\end{eqnarray*}
+
+
+现在来计算本征值问题：
+
+\begin{equation*}
+J^2 \phi = j(j+1)\hbar^2 \phi
+\end{equation*}
+
+
+既然总角动量仍是角动量，$J^2$就应满足如上本征值问题,
+$j$即总角动量量子数。
+
+
+首先我们把$J^2$表示为：
+
+
+\begin{equation*}
+J^2 = (L+S)^2 = l(l+1)\hbar^2 + \frac{3}{4}\hbar^2 + \hbar (\sigma
+\cdot L)
+\end{equation*}
+
+%可解出：$j = l \pm \frac{1}{2} $.
+
+~~~
+
+本征方程：
+
+$J^2 \left( {\begin{array}{*{20}c}
+   {aY_{lm} }  \\
+   {bY_{lm + 1} }  \\
+\end{array}} \right) = \left( {\begin{array}{*{20}c}
+   {L^2  + {\textstyle{3 \over 4}}\hbar ^2  + \hbar L_z } & {\hbar L_ -  }  \\
+   {\hbar L_ +  } & {L^2  + {\textstyle{3 \over 4}}\hbar ^2  - \hbar L_z }  \\
+\end{array}} \right)\left( {\begin{array}{*{20}c}
+   {aY_{lm} }  \\
+   {bY_{lm + 1} }  \\
+\end{array}} \right) = \lambda \hbar ^2 \left( {\begin{array}{*{20}c}
+   {aY_{lm} }  \\
+   {bY_{lm + 1} }  \\
+\end{array}} \right)$
+
+
+其中：$L_ \pm   = L_x  \pm iL_y $，利用：$L_ \pm  Y_{lm}  = \hbar \sqrt {l(l + 1) - m(m \pm 1)} Y_{lm \pm 1} $
+
+
+\begin{equation}\label{30-5}
+\left\{ \begin{array}{l}
+ \left[ {l\left( {l + 1} \right) + {\textstyle{3 \over 4}} + m - \lambda } \right]aY_{lm}  + \sqrt {l\left( {l + 1} \right) - m\left( {m + 1} \right)} bY_{lm}  = 0 \\
+ \sqrt {l\left( {l + 1} \right) - m\left( {m + 1} \right)} aY_{lm + 1}  + \left[ {l\left( {l + 1} \right) + {\textstyle{3 \over 4}} - m - 1 - \lambda } \right]bY_{lm + 1}  = 0 \\
+ \end{array} \right.
+\end{equation}
+
+
+$a,b$有非平庸解的条件：
+
+
+\begin{equation}\label{30-6}
+\left| {\begin{array}{*{20}c}
+   {l\left( {l + 1} \right) + {\textstyle{3 \over 4}} + m - \lambda } & {\sqrt {l\left( {l + 1} \right) - m\left( {m + 1} \right)} }  \\
+   {\sqrt {l\left( {l + 1} \right) - m\left( {m + 1} \right)} } & {l\left( {l + 1} \right) + {\textstyle{3 \over 4}} - m - 1 - \lambda }  \\
+\end{array}} \right| = 0
+\end{equation}
+
+
+解出：$\lambda _1  = \left( {l + {\textstyle{1 \over 2}}} \right)\left( {l + {\textstyle{3 \over 2}}} \right)$, $\lambda _2  = \left( {l - {\textstyle{1 \over 2}}} \right)\left( {l + {\textstyle{1 \over 2}}} \right)$
+
+即：$\lambda  = j\left( {j + 1} \right)$, $j = l \pm {\textstyle{1 \over 2}}$
+
+
+把$j_1  = l + {\textstyle{1 \over 2}}$，即$\lambda _1  = \left( {l + {\textstyle{1 \over 2}}} \right)\left( {l + {\textstyle{3 \over 2}}} \right)$代入方程组，得到：
+
+$\frac{a}{b} = \sqrt {\frac{{l + m + 1}}{{l - m}}} $, $\phi \left( {\theta ,\varphi ,S_z } \right) = \frac{1}{{\sqrt {2l + 1} }}\left( {\begin{array}{*{20}c}
+   {\sqrt {l + m + 1} Y_{lm} }  \\
+   {\sqrt {l - m} Y_{lm + 1} }  \\
+\end{array}} \right)$
+
+
+把$j_1  = l - {\textstyle{1 \over 2}}$，即$\lambda _2  = \left( {l - {\textstyle{1 \over 2}}} \right)\left( {l + {\textstyle{1 \over 2}}} \right)$代入方程组，得到：
+
+$\frac{a}{b} =  - \sqrt {\frac{{l - m}}{{l + m + 1}}} $, $\phi \left( {\theta ,\varphi ,S_z } \right) = \frac{1}{{\sqrt {2l + 1} }}\left( {\begin{array}{*{20}c}
+   { - \sqrt {l - m} Y_{lm} }  \\
+   {\sqrt {l + m + 1} Y_{lm + 1} }  \\
+\end{array}} \right)$
+
+
+$\left( {L^2 ,J^2 ,J_z } \right)$的共同本征态可记为：$\phi _{ljm_j } $
+
+
+$j = l + {\textstyle{1 \over 2}}$, $m_j  = m + {\textstyle{1 \over 2}}$
+
+
+$\phi _{ljm_j }  = \frac{1}{{\sqrt {2l + 1} }}\left( {\begin{array}{*{20}c}
+   {\sqrt {l + m + 1} Y_{lm} }  \\
+   {\sqrt {l - m} Y_{lm + 1} }  \\
+\end{array}} \right) = \frac{1}{{\sqrt {2j} }}\left( {\begin{array}{*{20}c}
+   {\sqrt {j + m_j } Y_{j - {\textstyle{1 \over 2}},m_j  - {\textstyle{1 \over 2}}} }  \\
+   {\sqrt {j - m_j } Y_{j - {\textstyle{1 \over 2}},m_j  + {\textstyle{1 \over 2}}} }  \\
+\end{array}} \right)$
+
+
+$j = l - {\textstyle{1 \over 2}}$, $m_j  = m + {\textstyle{1 \over 2}}$
+
+$\phi _{ljm_j }  = \frac{1}{{\sqrt {2l + 1} }}\left( {\begin{array}{*{20}c}
+   { - \sqrt {l - m} Y_{lm} }  \\
+   {\sqrt {l + m + 1} Y_{lm + 1} }  \\
+\end{array}} \right) = \frac{1}{{\sqrt {2j + 2} }}\left( {\begin{array}{*{20}c}
+   { - \sqrt {j - m_j  + 1} Y_{j + {\textstyle{1 \over 2}},m_j  - {\textstyle{1 \over 2}}} }  \\
+   {\sqrt {j + m_j  + 1} Y_{j + {\textstyle{1 \over 2}},m_j  + {\textstyle{1 \over 2}}} }  \\
+\end{array}} \right)$
+
+
+当$l = 0$时，无自旋轨道耦合，总角动量即为自旋，$j = s$，$m_j = m_s$
+
+
+$\phi _{0{\textstyle{1 \over 2}}{\textstyle{1 \over 2}}}  = \left( {\begin{array}{*{20}c}
+   {Y_{00} }  \\
+   0  \\
+\end{array}} \right)$, $\phi _{0{\textstyle{1 \over 2}} - {\textstyle{1 \over 2}}}  = \left( {\begin{array}{*{20}c}
+   0  \\
+   {Y_{00} }  \\
+\end{array}} \right)$
+
+
+\subsection{碱金属原子光谱双线结构}
+
+\begin{equation}\label{30-7}
+H = H_0  + H'_{SL}  =  - \frac{{\hbar {}^2}}{{2m}}\nabla ^2  + V\left( r \right) + \xi \left( r \right)S \cdot L
+\end{equation}
+
+
+$\begin{array}{l}
+ S \cdot L\phi _{ljm_j }  = \frac{1}{2}\left( {J^2  - S^2  - L^2 } \right)\phi _{ljm_j }  = \frac{{\hbar ^2 }}{2}\left[ {j\left( {j + 1} \right) - \frac{3}{4} - l\left( {l + 1} \right)} \right]\phi _{ljm_j }  \\
+  = \left\{ \begin{array}{l}
+ \frac{l}{2}\hbar ^2 \phi _{ljm_j } ,j = l + {\textstyle{1 \over 2}} \\
+  - \frac{{l + 1}}{2}\hbar ^2 \phi _{ljm_j } ,j = l - {\textstyle{1 \over 2}} \\
+ \end{array} \right. \\
+ \end{array}$
+
+
+对于类氢原子，$V(r) =  - \frac{{Ze^2 }}{r}$, $\xi \left( r \right) = \frac{1}{{2m^2 c^2 }}\frac{1}{r}\frac{{dV}}{{dr}} = \frac{{Ze^2 }}{{2m^2 c^2 }}\frac{1}{{r^3 }}$
+
+
+一级微扰近似：$\Delta E = \frac{{Ze^2 }}{{2m^2 c^2 }}\left\langle {\frac{1}{{r^3 }}} \right\rangle \left( {\frac{{2l + 1}}{2}} \right)\hbar ^2 $
+
+利用\footnote{杨福家《原子物理学》第131页}：$\left\langle
+{\frac{1}{{r^3 }}} \right\rangle  = \left\langle {nl}
+\right|\frac{1}{{r^3 }}\left| {nl} \right\rangle  = \frac{{Z^3
+}}{{n^3 a^3 }}\frac{1}{{l\left( {l + {\textstyle{1 \over 2}}}
+\right)\left( {l + 1} \right)}}$
+
+
+$\Delta E = \frac{{Z^4 e^2 \hbar ^2 }}{{2m^2 c^2 n^3 a^3 }}\frac{1}{{l\left( {l + 1} \right)}}$，可见谱线分裂随$Z$增大而迅速增大，随$l$增大而减小。
+
+
+
+\textbf{例}：钠双黄线
+
+$3P_{3/2}  \to 3S_{1/2} $: $\lambda  \simeq 5890\mathop A\limits^o $; $3P_{1/2}  \to 3S_{1/2} $: $\lambda  \simeq 5896\mathop A\limits^o $
+
+
+\subsection{复杂塞曼效应}
+
+如果原子在弱的外磁场中，能级的分裂比简单塞曼效应要复杂的多，
+称为复杂塞曼效应。这时，我们必须在哈密顿中考虑自旋-轨道耦合：
+
+\index{Zeeman effect: 塞曼效应}
+
+\begin{equation}\label{30-8}
+\begin{array}{l}
+ H =  - \frac{{\hbar {}^2}}{{2m}}\nabla ^2  + V\left( r \right) + \frac{{eB}}{{2\mu }}\left( {L_z  + 2S_z } \right) + \xi \left( r \right)S \cdot L \\
+  =  - \frac{{\hbar {}^2}}{{2m}}\nabla ^2  + V\left( r \right) + \xi \left( r \right)S \cdot L + \frac{{eB}}{{2\mu }}J_z  + \frac{{eB}}{{2\mu }}S_z  \\
+ \end{array}
+\end{equation}
+
+首先忽略最后一项$\frac{{eB}}{{2\mu }}S_z $，此时$\left( {H,L^2 ,J^2 ,J_z } \right)$构成完全集，$H$的本征态可表示为：
+
+\begin{equation}\label{30-9}
+\psi _{nljm_j } \left( {r,\theta ,\varphi ,S_z } \right) = R_{nl} \left( r \right)\phi _{ljm_j } \left( {\theta ,\varphi ,S_z } \right)
+\end{equation}
+
+$B \ne 0$时，$E_{nljm_j }  = E_{nlj}  + m_j \frac{{eB\hbar }}{{2\mu }}$，$m_j  = j,j - 1,..., - j$，简并完全解除（$2j+1$可以是偶数）。
+
+
+如果考虑最后一项$\frac{{eB}}{{2\mu }}S_z $，由于$\left[ {S \cdot
+L,S_z } \right] \ne 0$$ \Rightarrow \left[ {J^2 ,S_z } \right] \ne
+0$, 所以$j$不再是好量子数, 可将$\frac{{eB}}{{2\mu }}S_z
+$当作微扰处理\footnote{参考曾谨言《量子力学 卷I》第412页}。
+
+
+\begin{equation}\label{30-10}
+\frac{{eB}}{{2\mu }}\frac{\hbar }{2}\left\langle {ljm_j } \right|\sigma _z \left| {ljm_j } \right\rangle  = \left\{ \begin{array}{l}
+ \frac{{eB\hbar }}{{2\mu }}\frac{{m_j }}{{2j}},j = l + {\textstyle{1 \over 2}} \\
+  - \frac{{eB\hbar }}{{2\mu }}\frac{{m_j }}{{2\left( {j + 1} \right)}},j = l - {\textstyle{1 \over 2}} \\
+ \end{array} \right.
+\end{equation}
+
+能级分裂情况为：
+
+$E_{nljm_j }  = E_{nlj}  + \left\{ \begin{array}{l}
+ m_j \frac{{eB\hbar }}{{2\mu }}\left( {1 + \frac{1}{{2j}}} \right),j = l + \frac{1}{2} \\
+ m_j \frac{{eB\hbar }}{{2\mu }}\left( {1 - \frac{1}{{2j + 2}}} \right),j = l - \frac{1}{2} \\
+ \end{array} \right.$
+
+可见在反常塞曼效应中，谱线的数目和位置与正常塞曼效应和简单塞曼效应都很不相同,
+确实要复杂很多。
+
+以上结果也可通过矢量模型得到\footnote{关于矢量模型，请参考杨桂林等《近代物理》第133页。}。
+考虑自旋-轨道耦合情况下，角动量$L$和$S$组合成$J$并分别绕$J$进动。
+相应地，磁矩$\mu _L $、$\mu _S $组合成$\mu _J $，因为自旋与轨道的旋磁比($g$因子)不同，
+因此矢量$J$与$\mu _J$不共线。$\mu _J$将绕总角动量$J$进动，
+因此只有$\mu _J$在$J$方向上的投影$\left( {\mu _J } \right)_J $能被观察到，
+而其他分量随时间的平均为零。$\left( {\mu _J } \right)_J $在磁场$B$中的塞曼能为：
+
+$U =  - \left( {\mu _J } \right)_J  \cdot B$
+
+$\left( {\mu _J } \right)_J $的大小可表示为：
+
+$\begin{array}{l}
+ \left| {\left( {\mu _J } \right)_J } \right| = \left| {\mu _L } \right|\cos \left( {L,J} \right) + \left| {\mu _S } \right|\cos \left( {S,J} \right) \\
+  = \mu _B \left[ {\sqrt {l\left( {l + 1} \right)} \cos \cos \left( {L,J} \right) + 2\sqrt {S\left( {S + 1} \right)} \cos \cos \left( {S,J} \right)} \right] \\
+  = g_j \sqrt {j\left( {j + 1} \right)} \mu _B  \\
+ \end{array}$
+
+该式可改写为：$\left( {\mu _J } \right)_J  =  - \frac{{g_j j\mu _B }}{\hbar }$
+
+其中: $g_j  = 1 + \frac{{j\left( {j + 1} \right) + s\left( {s + 1} \right) - l\left( {l + 1} \right)}}{{2j\left( {j + 1} \right)}}$
+
+因此塞曼能可表示为：
+
+$U = \frac{{g_j \mu _B }}{\hbar }J \cdot B = g_j m_j \mu _B B$
+
+可以证明该式与我们用量子力学计算出的能级分裂公式是一致的（取$s=1/2$即可证明）。
+
+
+\subsection{原子态符号}
+
+
+在光谱学中通常用小写字母：$l$，$j$，$s$表示单电子的轨道角动量量子数，总角动量量子数和自旋量子数；
+用大写字母：$L,J,S$表示一个原子中所有电子的总轨道角动量量子数，总总角动量量子数和总自旋量子数。
+
+对于一个电子处于轨道角动量量子数$l = 0,1,2...$的状态用$s$、$p$、$d$等小写字母表示，相应地原子中所有电子处于总轨道角动量量子数：$L = 0,1,2...$的状态则用大写字母$S,P,D...$来表示。
+
+如果给定原子总轨道角动量量子数$L$，总自旋量子数$S$（对于多电子原子，$S$可以不等于1/2），
+则原子总角动量量子数$J$可以取$L + S, L + S - 1 , ... ,\left| {L - S} \right|$
+共$2S + 1$种不同的值。简并解除后，原子就分裂为$2S + 1$个能级。
+
+在光谱学中用符号：$N{}^{2S + 1}L_J $表示原子的一个态，称为原子态符号。\footnote{参考杨福家《原子物理学》第228页}
+$N:$主量子数；$S:$总自旋量子数；$L:$表示总轨道量子数的大写字母；$J:$总角动量量子数。（一般不写$N$）
+
+
+
+\subsection*{练习}
+
+\begin{enumerate}
+
+\item $J = L + S$是总自旋角动量, $L$是轨道角动量, $S$是自旋角动量. 证明:
+(1)$\left[ J_z, L \cdot S  \right] = 0$, (2)$\left[ L^2 , L \cdot S
+\right] = 0$, 利用此一性质, 请继续证明: $\left[ L^2, J^2 \right] =
+0$.
+
+\item 自旋轨道耦合：考虑在二维电子系统中存在自旋---轨道耦合，$H = H_0 +
+H_{so}$, 假设电子的轨道运动被限制在$x-y$平面内,
+$H_0$是二维自由电子哈密顿：$H_0 = \frac{1}{2m}(p_x^2 + p_y^2)$,
+$H_{so}$表示电子自旋自由度与轨道自由度的耦合：$H_{so} =
+\frac{\lambda}{\hbar}(p_y \sigma_x - p_x \sigma_y)$.
+求：(1)对哈密顿量$H_0$求解本征值问题, 并说明对$s_z = \pm
+\frac{\hbar}{2}$, 能量是简并的。(2)对哈密顿量$H = H_0 +
+H_{so}$求解本征值问题, 即求出本征值及对应本征波函数。
+
+解：即考虑电子的轨道自由度, 也考虑电子的自旋自由度,
+我们把电子的态矢量表示为如下直接乘积的形式：
+
+\begin{equation*}
+    \left| \alpha \right\rangle = \left| spin \right\rangle \left|
+    orbital
+    \right\rangle
+\end{equation*}
+
+对自旋自由度而言: $1 = \left| + \right\rangle \left\langle + \right|
++ \left| - \right\rangle \left\langle - \right|$, 因此：
+
+\begin{equation*}
+\left| \alpha \right\rangle = \left( \left| + \right\rangle
+\left\langle + \mid spin \right\rangle + \left| - \right\rangle
+\left\langle - \mid spin \right\rangle \right) \left| orbital
+\right\rangle
+\end{equation*}
+
+上式可表示为:
+
+\begin{equation*}
+    \left| \alpha \right\rangle \doteq \left( {\begin{array}{*{20}c}
+   {a}  \\
+   {b}  \\
+ \end{array} } \right)
+ \psi(r) = \left( {\begin{array}{*{20}c}
+   {a \psi(r)}  \\
+   {b} \psi(r) \\
+ \end{array} } \right)
+\end{equation*}
+
+这里$\left\langle + \mid spin \right\rangle = a$, $\left\langle
+-\mid spin \right\rangle = b$, $a^2 + b^2 =1$;
+
+$\psi(r)= \left\langle r \mid orbital \right\rangle$.
+
+(1)我们需求解如下本征值问题：
+
+\begin{equation*}
+\left( {\begin{array}{*{20}c}
+   {\frac{p^2}{2m}} & {0}  \\
+   {0} & {\frac{p^2}{2m}}  \\
+ \end{array} } \right)
+\left( {\begin{array}{*{20}c}
+   {a \psi(r)}  \\
+   {b} \psi(r) \\
+ \end{array} } \right)
+= E \left( {\begin{array}{*{20}c}
+   {a \psi(r)}  \\
+   {b} \psi(r) \\
+ \end{array} } \right)
+\end{equation*}
+
+对自旋向上和自旋向下, 我们需求相同的本征值问题:
+
+\begin{equation*}
+    \frac{1}{2m}\left( p_x^2 + p_y^2  \right) \psi(x,y)= E \psi(x,y)
+\end{equation*}
+
+解出本征波函数为:
+
+\begin{equation*}
+\psi_k = \frac{1}{\sqrt A} e^{i(k_x x + k_y y)}
+\end{equation*}
+
+这里$A$是二维电子系统的面积.
+
+本征值为: $E_k = \frac{\hbar^2 k^2}{2m} = \frac{1}{2m}\left( k_x^2 +
+k_y^2 \right)$
+
+现在本征值问题为：
+
+\begin{equation*}
+\left( {\begin{array}{*{20}c}
+   {\frac{\hbar^2 k^2}{2m}} & {0}  \\
+   {0} & {\frac{\hbar^2 k^2}{2m}}  \\
+ \end{array} } \right)
+\left( {\begin{array}{*{20}c}
+   {a}  \\
+   {b}  \\
+ \end{array} } \right)
+= E \left( {\begin{array}{*{20}c}
+   {a}  \\
+   {b}  \\
+ \end{array} } \right)
+\end{equation*}
+
+$a, b$有非零解的条件是:
+
+\begin{equation*}
+\det \left( {\begin{array}{*{20}c}
+   {E_k -E} & {0}  \\
+   {0} & {E_k -E}  \\
+ \end{array} } \right) = 0
+\end{equation*}
+
+$E$有两个根, 解出是二重根, 即:
+
+\begin{equation*}
+E_1 = E_2 = E_k = \frac{\hbar^2}{2m}\left( k_x^2 + k_y^2 \right)
+\end{equation*}
+
+对应本征波函数可表达为\footnote{由于对任意$a, b$, 本征值问题都成立,
+所以这里只写出一种可行的表达形式。}:
+
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  \psi_1 &=& \left( {\begin{array}{*{20}c}
+   {\psi_k }  \\
+   {0}  \\
+ \end{array} } \right) \\
+  \psi_2 &=& \left( {\begin{array}{*{20}c}
+   {0 }  \\
+   {\psi_k}  \\
+ \end{array} } \right)
+\end{eqnarray*}
+
+
+(2)考虑自旋---轨道耦合后, 哈密顿量中出现了非对角项. 本征值问题为:
+
+
+\begin{equation*}
+\left( {\begin{array}{*{20}c}
+   {\frac{p^2}{2m}} & {\frac{\lambda}{\hbar}\left( p_y + i p_x \right)}  \\
+   { \frac{\lambda}{\hbar}\left( p_y - i p_x \right) } & {\frac{p^2}{2m}}  \\
+ \end{array} } \right)
+\left( {\begin{array}{*{20}c}
+   {a \psi_k}  \\
+   {b \psi_k}  \\
+ \end{array} } \right)
+= E \left( {\begin{array}{*{20}c}
+   {a \psi_k}  \\
+   {b \psi_k}  \\
+ \end{array} } \right)
+\end{equation*}
+
+化简为：
+
+\begin{equation}\label{spin_orbital}
+\left( {\begin{array}{*{20}c}
+   { \frac{\hbar^2 k^2}{2m} } & { \lambda \left( k_y + i k_x \right)  }  \\
+   { \lambda \left( k_y - i k_x  \right) } & { \frac{\hbar^2 k^2}{2m}   }  \\
+ \end{array} } \right)
+\left( {\begin{array}{*{20}c}
+   {a }  \\
+   {b }  \\
+ \end{array} } \right)
+= E \left( {\begin{array}{*{20}c}
+   {a }  \\
+   {b }  \\
+ \end{array} } \right)
+\end{equation}
+
+$a, b$存在非零解的条件是：
+
+\begin{equation*}
+\det \left( {\begin{array}{*{20}c}
+   {E_k - E} & {\lambda \left( k_y + i k_x \right)}  \\
+   {\lambda \left( k_y - i k_x  \right)} & {E_k - E}  \\
+ \end{array} } \right) = 0
+\end{equation*}
+
+解出：
+
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  E_1 &=& E_k + \lambda k \\
+  E_2 &=& E_k - \lambda k
+\end{eqnarray*}
+
+将$E_1$代入本征方程(\ref{spin_orbital}), 得到:
+
+\begin{equation*}
+\left( {\begin{array}{*{20}c}
+   { E_k } & { \lambda \left( k_y + i k_x \right)  }  \\
+   { \lambda \left( k_y - i k_x  \right) } & { E_k }  \\
+ \end{array} } \right)
+\left( {\begin{array}{*{20}c}
+   {a }  \\
+   {b }  \\
+ \end{array} } \right)
+= \left( E_k + \lambda k \right) \left( {\begin{array}{*{20}c}
+   {a }  \\
+   {b }  \\
+ \end{array} } \right)
+\end{equation*}
+
+化简可得：
+
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  \left( k_y + i k_x \right) b &=& k a \\
+  \left( k_y - i k_x \right) a &=& k b
+\end{eqnarray*}
+
+即：
+
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  \frac{b}{a} &=& \frac{k}{k_y + i k_x} = e^{- i \theta_k} \\
+  \frac{a}{b} &=& \frac{k}{k_y - i k_x} = e^{i \theta_k}
+\end{eqnarray*}
+
+假设: $k_y + i k_x = k e^{i \theta_k}$, 这里: $\theta_k = \tan^{-1}
+\frac{k_x}{k_y}$
+
+$E_1$对应的本征函数可表示为:
+
+
+\begin{equation*}
+\chi_1 =\frac{1}{\sqrt 2} \left( {\begin{array}{*{20}c}
+   {1}  \\
+   {e^{-i \theta_k}}  \\
+ \end{array} } \right)
+\end{equation*}
+
+类似地, 我们可以求出$E_2$对应的本征函数:
+
+\begin{equation*}
+\chi_2 =\frac{1}{\sqrt 2} \left( {\begin{array}{*{20}c}
+   {1}  \\
+   { - e^{-i \theta_k}}  \\
+ \end{array} } \right)
+\end{equation*}
+
+$\chi_1$, $\chi_2$是正交的, 验证如下:
+
+\begin{equation*}
+\left\langle \chi_1 \mid \chi_2 \right\rangle \doteq \frac{1}{2}
+\left( 1, e^{i \theta_k} \right) \left( {\begin{array}{*{20}c}
+   {1}  \\
+   {- e^{- i \theta_k}}  \\
+\end{array} } \right) = 0
+\end{equation*}
+
+\end{enumerate}
